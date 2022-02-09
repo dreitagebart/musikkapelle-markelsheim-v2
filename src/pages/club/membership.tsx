@@ -1,5 +1,6 @@
+import Link from 'next/link'
 import { Heading } from '@chakra-ui/react'
-import type { NextPage } from 'next'
+import { NextPage } from 'next'
 
 import { Animate, ClubSubMenu, Global } from '../../components'
 
@@ -25,7 +26,7 @@ const Page: NextPage = () => {
         </p>
         <p>
           Wende dich am besten an unsere Vorsitzende{' '}
-          <a href='/contact'>Verena Hüttl</a>.
+          <Link href='/contact'>Verena Hüttl</Link>.
         </p>
         <p>Wir freuen uns auf dich!</p>
         <br />
@@ -53,7 +54,7 @@ const Page: NextPage = () => {
         </blockquote>
         <p>
           Für eine passive Mitgliedschaft wende dich einfach an{' '}
-          <a href='/contact'>unsere Ansprechpartner</a> oder nutze das
+          <Link href='/contact'>unsere Ansprechpartner</Link> oder nutze das
           untenstehende Beitrittsformular zum Herunterladen.
         </p>
         <div className='u-center'>
