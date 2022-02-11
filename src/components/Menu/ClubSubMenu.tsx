@@ -1,17 +1,21 @@
 import React from 'react'
-import { Box, Stack } from '@chakra-ui/react'
+import { Divider, Stack } from '@chakra-ui/react'
 
-import { MenuLink } from './MenuLink'
+import { SubMenuLink } from './Links'
 
 interface Props {}
 
 export const ClubSubMenu: React.FC<Props> = () => {
   return (
-    <Stack direction='row' fontFamily='Montserrat Light'>
-      <MenuLink href='/club/about'>Über uns</MenuLink>
-      <MenuLink href='/club/membership'>Mitgliedschaft</MenuLink>
-      <MenuLink href='/club/recruitment'>Ausbildung</MenuLink>
-      <MenuLink href='/club/band'>Unsere Musiker</MenuLink>
-    </Stack>
+    <>
+      <Stack direction='row' fontFamily='Montserrat Light'>
+        <SubMenuLink href='/club/about'>Über uns</SubMenuLink>
+        <SubMenuLink href='/club/membership'>Mitgliedschaft</SubMenuLink>
+        <SubMenuLink href='/club/recruitment'>Ausbildung</SubMenuLink>
+        <SubMenuLink href='/club/band'>Unsere Musiker</SubMenuLink>
+        <SubMenuLink href='/club/history'>Vereinsgeschichte</SubMenuLink>
+      </Stack>
+      <Divider></Divider>
+    </>
   )
 }

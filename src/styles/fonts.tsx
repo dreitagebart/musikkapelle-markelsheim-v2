@@ -25,7 +25,7 @@ export const Fonts = () => {
           font-style: normal;
           font-weight: 400;
           font-display: swap;
-          src: url(/fonts/montserrat/Montserrat-Regular.ttf) format('truetype');
+          src: url(/fonts/montserrat/static/Montserrat-Regular.ttf) format('truetype');
         }
         
         @font-face {
@@ -33,7 +33,7 @@ export const Fonts = () => {
           font-style: lighter;
           font-weight: 200;
           font-display: swap;
-          src: url(/fonts/montserrat/Montserrat-ExtraLight.ttf) format('truetype');
+          src: url(/fonts/montserrat/static/Montserrat-ExtraLight.ttf) format('truetype');
         }  
   `}
     ></Global>

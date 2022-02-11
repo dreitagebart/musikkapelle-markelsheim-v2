@@ -11,7 +11,7 @@ import {
   VStack
 } from '@chakra-ui/react'
 
-import { MenuLink } from './MenuLink'
+import { MainMenuLink } from './Links'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
 interface Props {}
@@ -20,7 +20,7 @@ export const MainMenu: React.FC<Props> = () => {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
-    <Box fontFamily='Montserrat Light' width='100%'>
+    <Box fontFamily='Montserrat Light' width='100%' as='nav'>
       <Container maxWidth='container.xl'>
         <HStack display={['none', 'none', 'flex']} justifyContent='center'>
           <Divider></Divider>
@@ -60,27 +60,24 @@ interface MenuProps {
 const Menu: React.FC<MenuProps> = ({ onClick }) => {
   return (
     <>
-      <MenuLink href='/club' onClick={onClick}>
+      <MainMenuLink href='/club' onClick={onClick}>
         Verein
-      </MenuLink>
-      <MenuLink href='/events' onClick={onClick}>
+      </MainMenuLink>
+      <MainMenuLink href='/events' onClick={onClick}>
         Termine
-      </MenuLink>
-      <MenuLink href='/history' onClick={onClick}>
-        Geschichte
-      </MenuLink>
-      <MenuLink href='/images' onClick={onClick}>
+      </MainMenuLink>
+      <MainMenuLink href='/images' onClick={onClick}>
         Bilder
-      </MenuLink>
-      <MenuLink href='/markelsheim' onClick={onClick}>
+      </MainMenuLink>
+      <MainMenuLink href='/markelsheim' onClick={onClick}>
         Markelsheim
-      </MenuLink>
-      <MenuLink href='/links' onClick={onClick}>
+      </MainMenuLink>
+      <MainMenuLink href='/links' onClick={onClick}>
         Links
-      </MenuLink>
-      <MenuLink href='/contact' onClick={onClick}>
+      </MainMenuLink>
+      <MainMenuLink href='/contact' onClick={onClick}>
         Kontakt
-      </MenuLink>
+      </MainMenuLink>
     </>
   )
 }

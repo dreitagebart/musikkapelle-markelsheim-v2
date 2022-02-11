@@ -8,7 +8,7 @@ const Page: NextPage = () => {
     <Global title='Geschichte'>
       <MarkelsheimSubMenu></MarkelsheimSubMenu>
       <Animate>
-        <Heading>Geschichte</Heading>
+        <Heading variant='my'>Die Geschichte von Markelsheim</Heading>
         <div className='font-light'>
           Markelsheim war ein altes Reichslehen, das unter Kaiser Heinrich III
           im Jahre 1054 erstmals erwähnt wurde. Graf Emehard der hier

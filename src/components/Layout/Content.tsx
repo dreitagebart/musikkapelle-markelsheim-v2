@@ -1,11 +1,11 @@
-import { Container } from '@chakra-ui/react'
 import React from 'react'
+import { Container } from '@chakra-ui/react'
 
 interface Props {}
 
 export const Content: React.FC<Props> = ({ children }) => {
   return (
-    <Container as='main' my='2rem' maxWidth='container.xl'>
+    <Container my='2rem' as='main' maxWidth='container.xl'>
       {children}
     </Container>
   )

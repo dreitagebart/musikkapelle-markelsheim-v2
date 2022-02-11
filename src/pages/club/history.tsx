@@ -1,14 +1,14 @@
 import { Heading } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 
-import { Animate, Global } from '../components'
+import { Animate, ClubSubMenu, Global } from '../../components'
 
 const Page: NextPage = () => {
   return (
     <Global title='Geschichte'>
       <Animate>
-        <Heading>Geschichte</Heading>
-        <div className='divider' />
+        <ClubSubMenu></ClubSubMenu>
+        <Heading variant='my'>Geschichte</Heading>
         <div className='font-light'>
           <h3 className='title font-light'>
             Die Geschichte der Musikkapelle Markelsheim

@@ -1,24 +1,27 @@
+import { useState } from 'react'
 import {
   Alert,
+  AlertDescription,
   AlertIcon,
+  AlertTitle,
   Box,
   Button,
   Divider,
-  Fade,
   FormControl,
   FormLabel,
   Heading,
   HStack,
   Icon,
   Input,
+  InputGroup,
+  InputLeftElement,
   LinkBox,
   LinkOverlay,
   Text,
   Textarea
 } from '@chakra-ui/react'
-import type { NextPage } from 'next'
-import { useState } from 'react'
-import { FaRegFilePdf } from 'react-icons/fa'
+import { NextPage } from 'next'
+import { FaPhone, FaRegEnvelope, FaRegFilePdf, FaUser } from 'react-icons/fa'
 
 import { Animate, Global } from '../components'
 
@@ -33,15 +36,16 @@ interface FormState {
   email: string
   phone: string
   message: string
+  success: boolean
 }
 
 const Page: NextPage = () => {
-  const [success, setSuccess] = useState(false)
   const [form, setForm] = useState<FormState>({
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    success: false
   })
 
   const [errors, setErrors] = useState<ErrorState>({
@@ -55,7 +59,7 @@ const Page: NextPage = () => {
 
     const formErrors: ErrorState = {}
 
-    const { name, email, message, phone } = form
+    const { name, email, message } = form
 
     if (!message) formErrors.message = 'Bitte gebe eine Nachricht an'
 
@@ -72,96 +76,189 @@ const Page: NextPage = () => {
   const handleFormChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setSuccess(false)
     setForm({ ...form, [event.target.name]: event.target.value })
   }
 
   return (
     <Global title='Kontakt'>
       <Animate>
-        <div>
-          <h6 className='font-light'>
-            <b>Musikkapelle Markelsheim e. V.</b>
-            <br />
-            Frau Verena Hüttl
-            <br />
-            Schwarzrieslingstraße 3<br />
-            97980 Markelsheim
-          </h6>
-        </div>
-        <p className='title'>
+        <Heading variant='mb' size='md'>
+          Vorstand der Musikkapelle Markelsheim
+        </Heading>
+        <Heading size='sm'>
+          Musikkapelle Markelsheim e. V.
+          <br />
+          Frau Verena Hüttl
+          <br />
+          Schwarzrieslingstraße 3<br />
+          97980 Markelsheim
+        </Heading>
+        <Text>
           Wenn du mit uns Kontakt aufnehmen möchtest, dann verwende doch bitte
           untenstehendes Kontaktformular.
-        </p>
-        {success && (
-          <div className='toast toast--success'>
-            <button className='btn-close'></button>
-            <p>Kontaktformular wurde erfolgreich versendet!</p>
-          </div>
+        </Text>
+        {form.success && (
+          <Alert status='success' my={4} variant='left-accent'>
+            <AlertIcon></AlertIcon>
+            <AlertTitle mr={2}>
+              Kontaktformular wurde erfolgreich versendet
+            </AlertTitle>
+          </Alert>
         )}
-        <form onSubmit={handleSubmit}>
-          <FormControl>
-            <FormLabel style={{ cursor: 'pointer' }} htmlFor='contact-name'>
-              Vor- und Zuname
-            </FormLabel>
-            <Input
-              id='contact-name'
-              name='name'
-              value={form.name}
-              onChange={handleFormChange}
-            ></Input>
-          </FormControl>
-          <FormControl>
-            <FormLabel style={{ cursor: 'pointer' }} htmlFor='contact-email'>
-              eMail Adresse
-            </FormLabel>
-            <Input
-              id='contact-email'
-              name='email'
-              type='email'
-              value={form.email}
-              onChange={handleFormChange}
-            ></Input>
-          </FormControl>
-          <FormControl>
-            <FormLabel style={{ cursor: 'pointer' }} htmlFor='contact-phone'>
-              Telefon
-            </FormLabel>
-            <Input
-              id='contact-phone'
-              name='phone'
-              type='tel'
-              value={form.phone}
-              onChange={handleFormChange}
-            ></Input>
-          </FormControl>
-          <FormControl>
-            <FormLabel style={{ cursor: 'pointer' }} htmlFor='contact-message'>
-              Nachricht
-            </FormLabel>
-            <Textarea
-              id='contact-message'
-              name='message'
-              value={form.message}
-              onChange={handleFormChange}
-            ></Textarea>
-          </FormControl>
-          <FormControl>
-            <Button type='submit'>Senden</Button>
-          </FormControl>
-        </form>
-        <div className='content-no-padding'>
-          <div className='m-6'></div>
-        </div>
-        <Heading size='md'>Geld spenden &amp; Bankverbindung</Heading>
-        <Divider></Divider>
+        <Box
+          my={4}
+          maxWidth='860px'
+          backgroundColor='gray.50'
+          borderStyle='solid'
+          borderWidth='1px'
+          borderColor='gray.200'
+          borderRadius='8px'
+          padding='2rem'
+        >
+          <form onSubmit={handleSubmit}>
+            <FormControl marginBottom='2rem'>
+              <FormLabel
+                paddingLeft='.5rem'
+                cursor='pointer'
+                htmlFor='contact-name'
+              >
+                Vor- und Zuname
+              </FormLabel>
+              <Alert
+                paddingY='0.3rem'
+                fontSize='0.9rem'
+                borderRadius='4px'
+                mb='8px'
+                hidden={!!!errors.name}
+                status='error'
+                variant='left-accent'
+              >
+                <AlertDescription>{errors.name}</AlertDescription>
+              </Alert>
+              <InputGroup>
+                <InputLeftElement>
+                  <Icon as={FaUser}></Icon>
+                </InputLeftElement>
+                <Input
+                  isInvalid={!!errors.name}
+                  focusBorderColor='brand.light'
+                  background='white'
+                  id='contact-name'
+                  name='name'
+                  value={form.name}
+                  onChange={handleFormChange}
+                ></Input>
+              </InputGroup>
+            </FormControl>
+            <FormControl marginBottom='2rem'>
+              <FormLabel
+                paddingLeft='.5rem'
+                cursor='pointer'
+                htmlFor='contact-email'
+              >
+                eMail Adresse
+              </FormLabel>
+              <Alert
+                paddingY='0.3rem'
+                fontSize='0.9rem'
+                borderRadius='4px'
+                mb='8px'
+                hidden={!!!errors.email}
+                status='error'
+                variant='left-accent'
+              >
+                <AlertDescription>{errors.email}</AlertDescription>
+              </Alert>
+              <InputGroup>
+                <InputLeftElement>
+                  <Icon as={FaRegEnvelope}></Icon>
+                </InputLeftElement>
+                <Input
+                  isInvalid={!!errors.email}
+                  focusBorderColor='brand.light'
+                  background='white'
+                  id='contact-email'
+                  name='email'
+                  type='email'
+                  value={form.email}
+                  onChange={handleFormChange}
+                ></Input>
+              </InputGroup>
+            </FormControl>
+            <FormControl marginBottom='2rem'>
+              <FormLabel
+                paddingLeft='.5rem'
+                cursor='pointer'
+                htmlFor='contact-phone'
+              >
+                Telefon
+              </FormLabel>
+              <InputGroup>
+                <InputLeftElement>
+                  <Icon as={FaPhone}></Icon>
+                </InputLeftElement>
+                <Input
+                  focusBorderColor='brand.light'
+                  background='white'
+                  id='contact-phone'
+                  name='phone'
+                  type='tel'
+                  value={form.phone}
+                  onChange={handleFormChange}
+                ></Input>
+              </InputGroup>
+            </FormControl>
+            <FormControl marginBottom='2rem'>
+              <FormLabel
+                paddingLeft='.5rem'
+                cursor='pointer'
+                htmlFor='contact-message'
+              >
+                Nachricht
+              </FormLabel>
+              <Alert
+                paddingY='0.3rem'
+                fontSize='0.9rem'
+                borderRadius='4px'
+                mb='8px'
+                hidden={!!!errors.message}
+                status='error'
+                variant='left-accent'
+              >
+                <AlertDescription>{errors.message}</AlertDescription>
+              </Alert>
+              <Textarea
+                isInvalid={!!errors.message}
+                focusBorderColor='brand.light'
+                background='white'
+                id='contact-message'
+                name='message'
+                value={form.message}
+                onChange={handleFormChange}
+              ></Textarea>
+            </FormControl>
+            <FormControl>
+              <Button type='submit' colorScheme='red'>
+                Senden
+              </Button>
+            </FormControl>
+          </form>
+        </Box>
+        <Heading size='md' variant='my'>
+          Geld spenden &amp; Bankverbindung
+        </Heading>
         <Box className='u-text-center font-light'>
           Mit einer Geldspende kannst du unser Vereinsleben fördern und den Kauf
           von Noten und Musikinstrumenten unterstützen.<br></br>
           Wir sagen schon einmal im Voraus: <b>VIELEN DANK!</b>
           <br></br>
           <br></br>
-          <Box backgroundColor='red.50' padding='1rem' borderRadius='8px'>
+          <Box
+            backgroundColor='red.50'
+            padding='1rem'
+            borderRadius='8px'
+            mb='1rem'
+          >
             <Heading size='sm'>Sparkasse Tauberfranken</Heading>
             <Box>
               <b>Kontoinhaber</b> Musikverein Markelsheim e.&nbsp;V.
@@ -180,8 +277,9 @@ const Page: NextPage = () => {
             </Box>
           </Box>
         </Box>
-        <Divider my='2rem'></Divider>
-        <Heading size='md'>Mitglied werden?</Heading>
+        <Heading size='md' variant='my'>
+          Mitglied werden?
+        </Heading>
         <Alert status='info' mb='1rem' width=''>
           <AlertIcon></AlertIcon>
           Du möchtest Mitglied in unserer Musikkapelle werden? Dann kannst du

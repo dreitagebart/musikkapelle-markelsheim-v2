@@ -1,7 +1,7 @@
 import React from 'react'
-import { Box, Stack } from '@chakra-ui/react'
+import { Stack } from '@chakra-ui/react'
 
-import { MenuLink } from './MenuLink'
+import { SubMenuLink } from './Links'
 
 interface Props {}
 
@@ -12,8 +12,8 @@ export const MarkelsheimSubMenu: React.FC<Props> = () => {
       fontFamily='Montserrat Light'
       textTransform='uppercase'
     >
-      <MenuLink href='/markelsheim/region'>Region</MenuLink>
-      <MenuLink href='/markelsheim/history'>Geschichte</MenuLink>
+      <SubMenuLink href='/markelsheim/region'>Region</SubMenuLink>
+      <SubMenuLink href='/markelsheim/history'>Geschichte</SubMenuLink>
     </Stack>
   )
 }
