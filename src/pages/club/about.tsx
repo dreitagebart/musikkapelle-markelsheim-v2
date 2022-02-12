@@ -10,6 +10,7 @@ const Page: NextPage = () => {
       <Animate>
         <Heading variant='my'>Etwas über uns</Heading>
         <Box
+          display='inline-block'
           background='gray.100'
           padding='1rem'
           borderRadius='8px'

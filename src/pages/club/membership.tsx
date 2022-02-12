@@ -54,18 +54,18 @@ const Page: NextPage = () => {
           Musikkapelle Markelsheim begrüßen zu dürfen.
         </Text>
         <Box
+          marginBottom='1rem'
+          display='inline-block'
           background='gray.100'
           borderRadius='8px'
           fontStyle='italic'
-          fontFamily='Montserrat'
+          fontFamily='Montserrat Light'
           fontSize='1.2rem'
           padding='1rem'
         >
-          Musik lebt durch den Menschen...
-          <br />
-          ... jeder Mensch braucht Musik...
-          <br />
-          ... und wir brauchen Sie!
+          <Text>Musik lebt durch den Menschen...</Text>
+          <Text>...jeder Mensch braucht Musik...</Text>
+          <Text>...und wir brauchen Sie!</Text>
         </Box>
         <Divider></Divider>
         <Text variant='block'>
@@ -73,15 +73,14 @@ const Page: NextPage = () => {
           <Link href='/contact'>unsere Ansprechpartner</Link> oder nutze das
           untenstehende Beitrittsformular zum Herunterladen.
         </Text>
-        <LinkBox>
+        <LinkBox display='inline-block'>
           <LinkOverlay href='/pdf/mitgliedschaft.pdf'>
             <HStack
               padding='1rem'
               borderRadius='8px'
               borderWidth='1px'
-              borderColor='#cfcfcf'
+              borderColor='gray.200'
               borderStyle='solid'
-              width='420px'
             >
               <Icon as={FaRegFilePdf} boxSize='2rem'></Icon>
               <Box>

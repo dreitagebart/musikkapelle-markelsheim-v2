@@ -6,7 +6,6 @@ import {
   AlertTitle,
   Box,
   Button,
-  Divider,
   FormControl,
   FormLabel,
   Heading,
@@ -85,15 +84,18 @@ const Page: NextPage = () => {
         <Heading variant='mb' size='md'>
           Vorstand der Musikkapelle Markelsheim
         </Heading>
-        <Heading size='sm'>
-          Musikkapelle Markelsheim e. V.
-          <br />
-          Frau Verena Hüttl
-          <br />
-          Schwarzrieslingstraße 3<br />
-          97980 Markelsheim
-        </Heading>
-        <Text>
+        <Box
+          background='gray.100'
+          borderRadius='8px'
+          padding='1rem'
+          display='inline-block'
+        >
+          <Heading size='sm'>Musikkapelle Markelsheim e. V.</Heading>
+          <Heading size='sm'>Verena Hüttl</Heading>
+          <Heading size='sm'>Schwarzrieslingstraße 3</Heading>
+          <Heading size='sm'>97980 Markelsheim</Heading>
+        </Box>
+        <Text marginTop='2rem'>
           Wenn du mit uns Kontakt aufnehmen möchtest, dann verwende doch bitte
           untenstehendes Kontaktformular.
         </Text>
@@ -106,7 +108,8 @@ const Page: NextPage = () => {
           </Alert>
         )}
         <Box
-          my={4}
+          marginTop='1rem'
+          marginBottom='4rem'
           maxWidth='860px'
           backgroundColor='gray.50'
           borderStyle='solid'
@@ -247,54 +250,80 @@ const Page: NextPage = () => {
         <Heading size='md' variant='my'>
           Geld spenden &amp; Bankverbindung
         </Heading>
-        <Box className='u-text-center font-light'>
+        <Text>
           Mit einer Geldspende kannst du unser Vereinsleben fördern und den Kauf
-          von Noten und Musikinstrumenten unterstützen.<br></br>
+          von Noten und Musikinstrumenten unterstützen.
+        </Text>
+        <Text>
           Wir sagen schon einmal im Voraus: <b>VIELEN DANK!</b>
-          <br></br>
-          <br></br>
-          <Box
-            backgroundColor='red.50'
-            padding='1rem'
-            borderRadius='8px'
-            mb='1rem'
-          >
-            <Heading size='sm'>Sparkasse Tauberfranken</Heading>
-            <Box>
-              <b>Kontoinhaber</b> Musikverein Markelsheim e.&nbsp;V.
-              <br></br>
-              <b>IBAN</b> DE70 6735 2565 0000 0979 72<br></br>
-              <b>BIC</b> SOLADES1TBB
+        </Text>
+        <Box>
+          <Box marginY='1rem'>
+            <Box
+              display='inline-block'
+              backgroundColor='red.50'
+              padding='1rem'
+              borderRadius='8px'
+            >
+              <Heading size='sm'>Sparkasse Tauberfranken</Heading>
+              <Box marginTop='0.4rem'>
+                <Text>
+                  <b>Kontoinhaber</b> Musikverein Markelsheim e.&nbsp;V.
+                </Text>
+                <Text>
+                  <b>IBAN</b> DE70 6735 2565 0000 0979 72
+                </Text>
+                <Text>
+                  <b>BIC</b> SOLADES1TBB
+                </Text>
+              </Box>
             </Box>
           </Box>
-          <Box backgroundColor='red.50' padding='1rem' borderRadius='8px'>
-            <Heading size='sm'>Volksbank Main-Tauber e.&nbsp;G.</Heading>
-            <Box>
-              <b>Kontoinhaber</b> Musikverein Markelsheim e.&nbsp;V.
-              <br></br>
-              <b>IBAN</b> DE60 6739 0000 0084 0580 09<br></br>
-              <b>BIC</b> GENODE61WTH
+          <Box>
+            <Box
+              display='inline-block'
+              backgroundColor='red.50'
+              padding='1rem'
+              borderRadius='8px'
+            >
+              <Heading size='sm'>Volksbank Main-Tauber e.&nbsp;G.</Heading>
+              <Box marginTop='0.4rem'>
+                <Text>
+                  <b>Kontoinhaber</b> Musikverein Markelsheim e.&nbsp;V.
+                </Text>
+                <Text>
+                  <b>IBAN</b> DE60 6739 0000 0084 0580 09
+                </Text>
+                <Text>
+                  <b>BIC</b> GENODE61WTH
+                </Text>
+              </Box>
             </Box>
           </Box>
         </Box>
         <Heading size='md' variant='my'>
           Mitglied werden?
         </Heading>
-        <Alert status='info' mb='1rem' width=''>
+        <Alert
+          status='info'
+          mb='1rem'
+          alignItems='flex-start'
+          borderRadius='8px'
+          maxWidth='800px'
+        >
           <AlertIcon></AlertIcon>
           Du möchtest Mitglied in unserer Musikkapelle werden? Dann kannst du
           hier das Mitgliedsforumular herunterladen und ausgefüllt an uns zurück
           senden.
         </Alert>
-        <LinkBox>
+        <LinkBox display='inline-block'>
           <LinkOverlay href='/pdf/mitgliedschaft.pdf'>
             <HStack
               padding='1rem'
               borderRadius='8px'
               borderWidth='1px'
-              borderColor='#cfcfcf'
+              borderColor='gray.200'
               borderStyle='solid'
-              width='420px'
             >
               <Icon as={FaRegFilePdf} boxSize='2rem'></Icon>
               <Box>

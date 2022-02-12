@@ -20,7 +20,7 @@ export const MainMenu: React.FC<Props> = () => {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
-    <Box fontFamily='Montserrat Light' width='100%' as='nav'>
+    <Box fontFamily='Montserrat' width='100%' as='nav'>
       <Container maxWidth='container.xl'>
         <HStack display={['none', 'none', 'flex']} justifyContent='center'>
           <Divider></Divider>

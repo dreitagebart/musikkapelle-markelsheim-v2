@@ -1,4 +1,12 @@
-import { Heading } from '@chakra-ui/react'
+import {
+  Box,
+  Heading,
+  HStack,
+  List,
+  ListItem,
+  Text,
+  VStack
+} from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 
@@ -10,151 +18,180 @@ const Page: NextPage = () => {
     <Global title='Musikkapelle'>
       <ClubSubMenu></ClubSubMenu>
       <Animate>
-        <div className='font-light'>
-          <br />
-          <div className='u-text-center'>
-            <Image
-              src={groupImage}
-              alt='Gruppenbild auf dem Weinberg Markelsheim'
-            />
-          </div>
-          <div className='row u-text-center'>
-            <div className='col-12'>
-              <h6 className='title font-light'>Dirigent</h6>
-              <p>Stephan Deppisch</p>
-            </div>
-          </div>
-          <div className='row u-text-center'>
-            <div className='col-4'>
-              <ul className='no-bullets'>
-                <li>
-                  <h6 className='title font-light'>Klarinette</h6>
-                </li>
-                <li>Isabell Balling</li>
-                <li>Corinna Burkert</li>
-                <li>Isabelle Herrmann</li>
-                <li>Tabea Halbmann</li>
-                <li>Verena Hüttl</li>
-                <li>Alfred Kimmelmann</li>
-                <li>Karin Staudt</li>
-                <li>Simone Tatusch</li>
-              </ul>
-            </div>
-            <div className='col-4'>
-              <ul className='no-bullets'>
-                <li>
-                  <h6 className='title font-light'>Schlagwerk</h6>
-                </li>
-                <li>Christoph Burkert</li>
-                <li>David Hernadi</li>
-                <li>Lena Kimmelmann</li>
-              </ul>
-            </div>
-            <div className='col-4'>
-              <ul className='no-bullets'>
-                <li>
-                  <h6 className='title font-light'>Querflöte</h6>
-                </li>
-                <li>Carla Bauer</li>
-                <li>Jule Haas</li>
-                <li>Sonja Hainke</li>
-                <li>Jelena Kuhn</li>
-                <li>Kristin Peyerl</li>
-              </ul>
-            </div>
-          </div>
-          <div className='row u-text-center'>
-            <div className='col-4'>
-              <ul className='no-bullets'>
-                <li>
-                  <h6 className='title font-light'>Tenorhorn</h6>
-                </li>
-                <li>Hermann Beck</li>
-                <li>Stefan Büchold</li>
-                <li>Wilfried Zeihsel</li>
-              </ul>
-            </div>
-            <div className='col-4'>
-              <ul className='no-bullets'>
-                <li>
-                  <h6 className='title font-light'>Trompete</h6>
-                </li>
-                <li>Jochen Popp</li>
-                <li>Rebeca Schulz</li>
-              </ul>
-            </div>
-            <div className='col-4'>
-              <ul className='no-bullets'>
-                <li>
-                  <h6 className='title font-light'>Flügelhorn</h6>
-                </li>
-                <li>Tobias Haas</li>
-                <li>David Hartmann</li>
-                <li>Benedikt Mika</li>
-                <li>Fred Prokosch</li>
-                <li>Anton Schneider</li>
-              </ul>
-            </div>
-          </div>
-          <div className='row u-text-center'>
-            <div className='col-4'>
-              <ul className='no-bullets'>
-                <li>
-                  <h6 className='title font-light'>Bariton</h6>
-                </li>
-                <li>Florian Metzger</li>
-                <li>Eugen Porasil</li>
-              </ul>
-            </div>
-            <div className='col-4'>
-              <ul className='no-bullets'>
-                <li>
-                  <h6 className='title font-light'>Posaune</h6>
-                </li>
-                <li>Lukas Halbmann</li>
-                <li>Bastian Hartmann</li>
-                <li>Philipp Hernadi</li>
-                <li>Franz Schmidberger</li>
-              </ul>
-            </div>
-            <div className='col-4'>
-              <ul className='no-bullets'>
-                <li>
-                  <h6 className='title font-light'>Bass</h6>
-                </li>
-                <li>Xaver Halbmann</li>
-                <li>Alois Zöllinger</li>
-              </ul>
-            </div>
-          </div>
-          <div className='row u-text-center'>
-            <div className='col-4'>
-              <ul className='no-bullets'>
-                <li>
-                  <h6 className='title font-light'>Horn</h6>
-                </li>
-                <li>Kai Kimmelmann</li>
-                <li>Sabine Strysak-Halbmann</li>
-              </ul>
-            </div>
-            <div className='col-4'>
-              <ul className='no-bullets'>
-                <li>
-                  <h6 className='title font-light'>Fagott</h6>
-                </li>
-                <li>Tizian Halbmann</li>
-              </ul>
-            </div>
-            <div className='col-4'>
-              <ul className='no-bullets'>
-                <li>
-                  <h6 className='title font-light'>Saxophon</h6>
-                </li>
-                <li>Nina Helebrand</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <Box my='1rem'>
+          <Image
+            className='band-logo'
+            placeholder='blur'
+            quality={100}
+            src={groupImage}
+            alt='Gruppenbild auf dem Weinberg Markelsheim'
+          />
+        </Box>
+        <VStack gap='2rem'>
+          <Box
+            display='flex'
+            flexDirection='column'
+            justifyContent='center'
+            alignItems='center'
+          >
+            <Heading size='md'>Dirigent</Heading>
+            <Text>Stephan Deppisch</Text>
+          </Box>
+          <HStack
+            alignItems='flex-start'
+            justifyContent='center'
+            gap='2rem'
+            width='100%'
+            maxWidth='860px'
+          >
+            <Box textAlign='center' width='100%'>
+              <Heading size='md' variant='mb'>
+                Klarinette
+              </Heading>
+              <List>
+                <ListItem>Isabell Balling</ListItem>
+                <ListItem>Corinna Burkert</ListItem>
+                <ListItem>Isabelle Herrmann</ListItem>
+                <ListItem>Tabea Halbmann</ListItem>
+                <ListItem>Verena Hüttl</ListItem>
+                <ListItem>Alfred Kimmelmann</ListItem>
+                <ListItem>Karin Staudt</ListItem>
+                <ListItem>Simone Tatusch</ListItem>
+              </List>
+            </Box>
+            <Box textAlign='center' width='100%'>
+              <Heading size='md' variant='mb'>
+                Schlagwerk
+              </Heading>
+              <List>
+                <ListItem>Christoph Burkert</ListItem>
+                <ListItem>David Hernadi</ListItem>
+                <ListItem>Lena Kimmelmann</ListItem>
+              </List>
+            </Box>
+            <Box textAlign='center' width='100%'>
+              <Heading size='md' variant='mb'>
+                Querflöte
+              </Heading>
+              <List>
+                <ListItem>Carla Bauer</ListItem>
+                <ListItem>Jule Haas</ListItem>
+                <ListItem>Sonja Hainke</ListItem>
+                <ListItem>Jelena Kuhn</ListItem>
+                <ListItem>Kristin Peyerl</ListItem>
+              </List>
+            </Box>
+          </HStack>
+          <HStack
+            alignItems='flex-start'
+            justifyContent='center'
+            gap='2rem'
+            width='100%'
+            maxWidth='860px'
+          >
+            <Box textAlign='center' width='100%'>
+              <Heading size='md' variant='mb'>
+                Tenorhorn
+              </Heading>
+              <List>
+                <ListItem>Hermann Beck</ListItem>
+                <ListItem>Stefan Büchold</ListItem>
+                <ListItem>Wilfried Zeihsel</ListItem>
+              </List>
+            </Box>
+            <Box textAlign='center' width='100%'>
+              <Heading size='md' variant='mb'>
+                Trompete
+              </Heading>
+              <List>
+                <ListItem>Jochen Popp</ListItem>
+                <ListItem>Rebeca Schulz</ListItem>
+              </List>
+            </Box>
+            <Box textAlign='center' width='100%'>
+              <Heading size='md' variant='mb'>
+                Flügelhorn
+              </Heading>
+              <List>
+                <ListItem>Tobias Haas</ListItem>
+                <ListItem>David Hartmann</ListItem>
+                <ListItem>Benedikt Mika</ListItem>
+                <ListItem>Fred Prokosch</ListItem>
+                <ListItem>Anton Schneider</ListItem>
+              </List>
+            </Box>
+          </HStack>
+          <HStack
+            alignItems='flex-start'
+            justifyContent='center'
+            gap='2rem'
+            width='100%'
+            maxWidth='860px'
+          >
+            <Box textAlign='center' width='100%'>
+              <Heading size='md' variant='mb'>
+                Bariton
+              </Heading>
+              <List>
+                <ListItem>Florian Metzger</ListItem>
+                <ListItem>Eugen Porasil</ListItem>
+              </List>
+            </Box>
+            <Box textAlign='center' width='100%'>
+              <Heading size='md' variant='mb'>
+                Posaune
+              </Heading>
+              <List>
+                <ListItem>Lukas Halbmann</ListItem>
+                <ListItem>Bastian Hartmann</ListItem>
+                <ListItem>Philipp Hernadi</ListItem>
+                <ListItem>Franz Schmidberger</ListItem>
+              </List>
+            </Box>
+            <Box textAlign='center' width='100%'>
+              <Heading size='md' variant='mb'>
+                Bass
+              </Heading>
+              <List>
+                <ListItem>Xaver Halbmann</ListItem>
+                <ListItem>Alois Zöllinger</ListItem>
+              </List>
+            </Box>
+          </HStack>
+          <HStack
+            alignItems='flex-start'
+            justifyContent='center'
+            gap='2rem'
+            width='100%'
+            maxWidth='860px'
+          >
+            <Box textAlign='center' width='100%'>
+              <Heading size='md' variant='mb'>
+                Horn
+              </Heading>
+              <List>
+                <ListItem>Kai Kimmelmann</ListItem>
+                <ListItem>Sabine Strysak-Halbmann</ListItem>
+              </List>
+            </Box>
+            <Box textAlign='center' width='100%'>
+              <Heading size='md' variant='mb'>
+                Fagott
+              </Heading>
+              <List>
+                <ListItem>Tizian Halbmann</ListItem>
+              </List>
+            </Box>
+            <Box textAlign='center' width='100%'>
+              <Heading size='md' variant='mb'>
+                Saxophon
+              </Heading>
+              <List>
+                <ListItem>Nina Helebrand</ListItem>
+              </List>
+            </Box>
+          </HStack>
+        </VStack>
       </Animate>
     </Global>
   )

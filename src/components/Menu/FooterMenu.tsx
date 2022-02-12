@@ -1,7 +1,7 @@
 import React from 'react'
 import { Stack } from '@chakra-ui/react'
 
-import { MenuLink } from './Links'
+import { FooterMenuLink } from './Links'
 
 interface Props {}
 
@@ -13,9 +13,9 @@ export const FooterMenu: React.FC<Props> = () => {
       fontFamily='Montserrat'
       fontSize='0.8rem'
     >
-      <MenuLink href='/member'>Mitglied werden</MenuLink>
-      <MenuLink href='/contact'>Kontakt</MenuLink>
-      <MenuLink href='/impressum'>Impressum</MenuLink>
+      <FooterMenuLink href='/club/membership'>Mitglied werden</FooterMenuLink>
+      <FooterMenuLink href='/contact'>Kontakt</FooterMenuLink>
+      <FooterMenuLink href='/impressum'>Impressum</FooterMenuLink>
     </Stack>
   )
 }
