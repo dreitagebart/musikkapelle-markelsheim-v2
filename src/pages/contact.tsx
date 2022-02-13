@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Axios, { AxiosResponse } from 'axios'
 import {
   Alert,
   AlertDescription,
@@ -20,9 +21,19 @@ import {
   Textarea
 } from '@chakra-ui/react'
 import { NextPage } from 'next'
-import { FaPhone, FaRegEnvelope, FaRegFilePdf, FaUser } from 'react-icons/fa'
+import {
+  FaPhone,
+  FaPaperPlane,
+  FaRegEnvelope,
+  FaRegFilePdf,
+  FaUser
+} from 'react-icons/fa'
 
 import { Animate, Global } from '../components'
+
+interface ApiResponse {
+  error: boolean
+}
 
 interface ErrorState {
   message?: string
@@ -30,12 +41,14 @@ interface ErrorState {
   name?: string
 }
 
+type FormStatus = 'error' | 'success' | 'initial' | 'loading'
+
 interface FormState {
   name: string
   email: string
   phone: string
   message: string
-  success: boolean
+  status: FormStatus
 }
 
 const Page: NextPage = () => {
@@ -44,7 +57,7 @@ const Page: NextPage = () => {
     email: '',
     phone: '',
     message: '',
-    success: false
+    status: 'initial'
   })
 
   const [errors, setErrors] = useState<ErrorState>({
@@ -56,9 +69,11 @@ const Page: NextPage = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
+    setForm({ ...form, status: 'loading' })
+
     const formErrors: ErrorState = {}
 
-    const { name, email, message } = form
+    const { name, email, message, phone } = form
 
     if (!message) formErrors.message = 'Bitte gebe eine Nachricht an'
 
@@ -69,7 +84,25 @@ const Page: NextPage = () => {
 
     setErrors(formErrors)
 
-    if (Object.keys(formErrors).length > 0) return
+    if (Object.keys(formErrors).length > 0) {
+      return setForm({ ...form, status: 'initial' })
+    }
+
+    Axios.post<{}, AxiosResponse<ApiResponse>, Omit<FormState, 'status'>>(
+      '/api/contact',
+      {
+        name,
+        email,
+        phone,
+        message
+      }
+    )
+      .then(() => {
+        setForm({ ...form, status: 'success' })
+      })
+      .catch(() => {
+        setForm({ ...form, status: 'error' })
+      })
   }
 
   const handleFormChange = (
@@ -99,7 +132,7 @@ const Page: NextPage = () => {
           Wenn du mit uns Kontakt aufnehmen möchtest, dann verwende doch bitte
           untenstehendes Kontaktformular.
         </Text>
-        {form.success && (
+        {form.status === 'success' && (
           <Alert status='success' my={4} variant='left-accent'>
             <AlertIcon></AlertIcon>
             <AlertTitle mr={2}>
@@ -143,6 +176,7 @@ const Page: NextPage = () => {
                   <Icon as={FaUser}></Icon>
                 </InputLeftElement>
                 <Input
+                  isDisabled={form.status === 'loading'}
                   isInvalid={!!errors.name}
                   focusBorderColor='brand.light'
                   background='white'
@@ -177,6 +211,7 @@ const Page: NextPage = () => {
                   <Icon as={FaRegEnvelope}></Icon>
                 </InputLeftElement>
                 <Input
+                  isDisabled={form.status === 'loading'}
                   isInvalid={!!errors.email}
                   focusBorderColor='brand.light'
                   background='white'
@@ -201,6 +236,7 @@ const Page: NextPage = () => {
                   <Icon as={FaPhone}></Icon>
                 </InputLeftElement>
                 <Input
+                  isDisabled={form.status === 'loading'}
                   focusBorderColor='brand.light'
                   background='white'
                   id='contact-phone'
@@ -231,6 +267,7 @@ const Page: NextPage = () => {
                 <AlertDescription>{errors.message}</AlertDescription>
               </Alert>
               <Textarea
+                isDisabled={form.status === 'loading'}
                 isInvalid={!!errors.message}
                 focusBorderColor='brand.light'
                 background='white'
@@ -241,7 +278,12 @@ const Page: NextPage = () => {
               ></Textarea>
             </FormControl>
             <FormControl>
-              <Button type='submit' colorScheme='red'>
+              <Button
+                type='submit'
+                colorScheme='red'
+                isLoading={form.status === 'loading'}
+                leftIcon={<Icon as={FaPaperPlane}></Icon>}
+              >
                 Senden
               </Button>
             </FormControl>
