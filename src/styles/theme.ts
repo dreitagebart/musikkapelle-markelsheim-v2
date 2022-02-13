@@ -51,9 +51,11 @@ const styles = {
   global: {
     '.slider': {
       position: 'relative',
-      backgroundColor: '#f7f7f7',
-      padding: '20px',
-      maxWidth: '670px',
+      backgroundColor: 'gray.100',
+      borderRadius: '16px',
+      boxShadow: '0 8px 24px -18px #000',
+      padding: '1rem',
+      maxWidth: '960px',
       marginLeft: 'auto',
       marginRight: 'auto'
     },
@@ -61,17 +63,17 @@ const styles = {
       overflow: 'hidden',
       width: '100%'
     },
-    '.slider__viewport.draggable': {
-      cursor: 'move'
-      // cursor: 'grab'
+    '.slider__viewport.is-draggable': {
+      cursor: 'grab'
     },
-    '.slider__viewport.dragging': {
+    '.slider__viewport.is-dragging': {
       cursor: 'grabbing'
     },
     '.slider__container': {
       display: 'flex',
       userSelect: 'none',
-      marginLeft: '-10px'
+      marginLeft: '-10px',
+      alignItems: 'center'
     },
     '.slider__slide': {
       position: 'relative',
@@ -80,19 +82,10 @@ const styles = {
     },
     '.slider__slide__inner': {
       position: 'relative',
-      overflow: 'hidden',
-      height: '190px'
+      overflow: 'hidden'
     },
     '.slider__slide__img': {
-      position: 'absolute',
-      display: 'block',
-      top: '50%',
-      left: '50%',
-      width: 'auto',
-      minHeight: '100%',
-      minWidth: '100%',
-      maxWidth: 'none',
-      transform: 'translate(-50%, -50%)'
+      borderRadius: '16px'
     },
     '.slider__button': {
       outline: 0,
@@ -104,11 +97,11 @@ const styles = {
       top: '50%',
       transform: 'translateY(-50%)',
       border: 0,
-      width: '30px',
-      height: '30px',
+      width: '40px',
+      height: '40px',
       justifyContent: 'center',
       alignItems: 'center',
-      fill: '#1bcacd',
+      fill: 'red.50',
       padding: 0
     },
     '.slider__button:disabled': {
@@ -130,6 +123,7 @@ const styles = {
       listStyle: 'none',
       justifyContent: 'center',
       paddingTop: '10px'
+      // background: 'gray.400'
     },
     '.slider__dot': {
       backgroundColor: 'transparent',
@@ -146,14 +140,14 @@ const styles = {
       alignItems: 'center'
     },
     '.slider__dot:after': {
-      backgroundColor: '#efefef',
+      backgroundColor: 'gray.400',
       width: '100%',
       height: '4px',
       borderRadius: '2px',
       content: '""'
     },
     '.slider__dot.selected:after': {
-      backgroundColor: '#1bcacd',
+      backgroundColor: 'red.400',
       opacity: 1
     },
     '.band-logo': {
