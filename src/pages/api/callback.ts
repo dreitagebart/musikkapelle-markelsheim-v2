@@ -11,9 +11,9 @@ export default async function handler(
   const urlParams = url.searchParams
   const code = urlParams.get('code')
   const provider = urlParams.get('provider')
-  const client = new AuthorizationCode(config(provider))
+  const client = new AuthorizationCode(config(provider!))
   const tokenParams = {
-    code,
+    code: code!,
     redirect_uri: `https://${host}/callback?provider=${provider}`
   }
 
@@ -23,12 +23,12 @@ export default async function handler(
 
     const responseBody = renderBody('success', {
       token,
-      provider
+      provider: provider!
     })
 
     res.statusCode = 200
     res.end(responseBody)
-  } catch (e) {
+  } catch (e: any) {
     res.statusCode = 200
     res.end(renderBody('error', e))
   }
