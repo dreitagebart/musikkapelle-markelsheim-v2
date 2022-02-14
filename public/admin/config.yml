@@ -1,0 +1,45 @@
+backend:
+  name: github
+  repo: dreitagebart/musikkapelle-markelsheim-v2
+  branch: main # Branch to update (optional; defaults to master)
+  base_url: https://musikkapelle-markelsheim-v2.vercel.app
+  # auth_endpoint: api/auth
+media_folder: public/images
+public_folder: img
+collections:
+  - name: 'news'
+    label: 'Neuigkeiten'
+    folder: 'src/cms/news'
+    create: true
+    fields:
+      - { label: 'Titel', name: 'title', widget: 'string' }
+      - { label: 'Veröffentlichung', name: 'publish_date', widget: 'datetime' }
+      - { label: 'Featured Image', name: 'thumbnail', widget: 'image' }
+      - { label: 'Inhalt', name: 'content', widget: 'markdown' }
+
+  - name: 'events'
+    label: 'Termine'
+    folder: 'src/cms/events'
+    create: true
+    fields:
+      - { label: 'Titel', name: 'title', widget: 'string' }
+      - { label: 'Veröffentlichung', name: 'publish_date', widget: 'datetime' }
+      - { label: 'Featured Image', name: 'thumbnail', widget: 'image' }
+      - { label: 'Inhalt', name: 'content', widget: 'markdown' }
+
+  - name: 'pages'
+    label: 'Seiten'
+    files:
+      - label: 'Home'
+        name: 'home'
+        file: 'src/cms/pages/home.md'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+          - label: 'Cats'
+            name: 'cats'
+            widget: list
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'text' }

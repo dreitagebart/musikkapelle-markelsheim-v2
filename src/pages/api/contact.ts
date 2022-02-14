@@ -38,7 +38,7 @@ const getConfirmationMailData = (
   html: confirmationMessage({ phone, email, message })
 })
 
-const handler = (req: NextApiRequest, res: NextApiResponse) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const transport = mailer.createTransport({
     host: process.env.MAIL_HOST,
     port: Number(process.env.MAIL_PORT),
