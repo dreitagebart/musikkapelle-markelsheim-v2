@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { AuthorizationCode } from 'simple-oauth2'
+
 import { config } from '../../lib/config'
 
 export default async function handler(
@@ -14,7 +15,7 @@ export default async function handler(
   const client = new AuthorizationCode(config(provider!))
   const tokenParams = {
     code: code!,
-    redirect_uri: `https://${host}/callback?provider=${provider}`
+    redirect_uri: `https://${host}/api/callback?provider=${provider}`
   }
 
   try {
