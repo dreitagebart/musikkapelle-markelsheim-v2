@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# wordpress
+/wordpress
+
 # testing
 /coverage
 
