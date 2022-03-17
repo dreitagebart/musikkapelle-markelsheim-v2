@@ -49,9 +49,17 @@ const components = {
 
 const styles = {
   global: {
+    '.content a': {
+      transition: 'color 300ms ease-in',
+      fontWeight: 'bold',
+      color: 'red.900'
+    },
+    '.content a:hover': {
+      color: 'red.600'
+    },
     '.slider': {
       position: 'relative',
-      backgroundColor: 'gray.100',
+      backgroundColor: 'gray.50',
       borderRadius: '16px',
       boxShadow: '0 8px 24px -18px #000',
       padding: '1rem',
@@ -89,6 +97,7 @@ const styles = {
     },
     '.slider__button': {
       outline: 0,
+      padding: '10px',
       cursor: 'pointer',
       backgroundColor: 'transparent',
       touchAction: 'manipulation',
@@ -97,33 +106,37 @@ const styles = {
       top: '50%',
       transform: 'translateY(-50%)',
       border: 0,
-      width: '40px',
-      height: '40px',
+      width: '60px',
+      height: '100%',
       justifyContent: 'center',
       alignItems: 'center',
       fill: 'red.50',
-      padding: 0
+      // padding: 0,
+      transition: 'all 300ms ease-in'
+    },
+    '.slider__button:hover': {
+      backgroundColor: 'whiteAlpha.500'
     },
     '.slider__button:disabled': {
       cursor: 'default',
       opacity: 0.3
     },
     '.slider__button__svg': {
+      overflow: 'hidden',
       width: '100%',
       height: '100%'
     },
     '.slider__button--prev': {
-      left: '27px'
+      left: '18px'
     },
     '.slider__button--next': {
-      right: '27px'
+      right: '18px'
     },
     '.slider__dots': {
       display: 'flex',
       listStyle: 'none',
-      justifyContent: 'center',
-      paddingTop: '10px'
-      // background: 'gray.400'
+      justifyContent: 'center'
+      // paddingTop: '10px'
     },
     '.slider__dot': {
       backgroundColor: 'transparent',

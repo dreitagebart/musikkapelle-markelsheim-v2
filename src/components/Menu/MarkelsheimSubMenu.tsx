@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stack } from '@chakra-ui/react'
+import { Divider, HStack } from '@chakra-ui/react'
 
 import { SubMenuLink } from './Links'
 
@@ -7,13 +7,12 @@ interface Props {}
 
 export const MarkelsheimSubMenu: React.FC<Props> = () => {
   return (
-    <Stack
-      direction='row'
-      fontFamily='Montserrat Light'
-      textTransform='uppercase'
-    >
-      <SubMenuLink href='/markelsheim/region'>Region</SubMenuLink>
-      <SubMenuLink href='/markelsheim/history'>Geschichte</SubMenuLink>
-    </Stack>
+    <>
+      <HStack fontFamily='Montserrat Light' flexWrap='wrap' spacing={0}>
+        <SubMenuLink href='/markelsheim/region'>Region</SubMenuLink>
+        <SubMenuLink href='/markelsheim/history'>Geschichte</SubMenuLink>
+      </HStack>
+      <Divider></Divider>
+    </>
   )
 }

@@ -1,14 +1,18 @@
-import { Heading } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 
-import { Animate, Global, MarkelsheimSubMenu } from '../../components'
+import {
+  Animate,
+  Global,
+  MarkelsheimSubMenu,
+  PageHeader
+} from '../../components'
 
 const Page: NextPage = () => {
   return (
     <Global title='Geschichte'>
       <MarkelsheimSubMenu></MarkelsheimSubMenu>
       <Animate>
-        <Heading variant='my'>Die Geschichte von Markelsheim</Heading>
+        <PageHeader>Die Geschichte von Markelsheim</PageHeader>
         <div className='font-light'>
           Markelsheim war ein altes Reichslehen, das unter Kaiser Heinrich III
           im Jahre 1054 erstmals erwähnt wurde. Graf Emehard der hier

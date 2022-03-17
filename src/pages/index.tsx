@@ -1,13 +1,14 @@
-import { Heading } from '@chakra-ui/react'
 import type { NextPage } from 'next'
+import Image from 'next/image'
 
-import { Global } from '../components'
+import band from '../assets/images/mkm02.jpeg'
+import { Global, PageHeader } from '../components'
 
 const Page: NextPage = () => {
   return (
     <Global>
-      <Heading>Lorem ipsum dolor sit amet</Heading>
-      <p>Ich möchte diesen Teppich nicht kaufen</p>
+      <PageHeader>Herzlich Willkommen!</PageHeader>
+      <Image src={band} alt='Gruppenbild der Musikkapelle'></Image>
     </Global>
   )
 }

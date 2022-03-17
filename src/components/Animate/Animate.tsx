@@ -16,6 +16,7 @@ export const Animate: React.FC<Props> = ({ children }) => {
 
   return (
     <Fade
+      className='content'
       in
       unmountOnExit
       animate={{ opacity: 1, transitionDuration: '1000ms' }}

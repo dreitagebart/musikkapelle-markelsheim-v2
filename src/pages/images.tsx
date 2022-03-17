@@ -1,4 +1,3 @@
-import { Heading } from '@chakra-ui/react'
 import { NextPage } from 'next'
 
 import { Animate, Global, Slider } from '../components'

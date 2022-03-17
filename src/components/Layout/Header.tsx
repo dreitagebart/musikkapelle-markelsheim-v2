@@ -1,7 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-import { Box, Center } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 
+import leafLeft from '../../assets/images/leaves_left.png'
+import leafRight from '../../assets/images/leaves_right.png'
 import logo from '../../assets/images/logo.png'
 import { MainMenu } from '..'
 import Link from 'next/link'
@@ -10,24 +12,41 @@ interface Props {}
 
 export const Header: React.FC<Props> = () => {
   return (
-    <Box
-      as='header'
-      bgGradient='linear(to-b, #dfdfdf, #fff)'
-      // border='1px solid red'
-      display='flex'
-      width='100vw'
-      flexDirection='column'
-      alignItems='center'
-      justifyContent='center'
-    >
-      <Box marginY='1rem'>
-        <Link href='/' passHref>
-          <a>
-            <Image src={logo} alt='Logo'></Image>
-          </a>
-        </Link>
+    <>
+      <Box
+        position='absolute'
+        top={0}
+        left={0}
+        display={['none', 'none', 'block']}
+      >
+        <Image src={leafLeft} alt=''></Image>
       </Box>
-      <MainMenu></MainMenu>
-    </Box>
+      <Box
+        position='absolute'
+        top={0}
+        right={0}
+        display={['none', 'none', 'block']}
+      >
+        <Image src={leafRight} alt=''></Image>
+      </Box>
+      <Box
+        as='header'
+        bgGradient='linear(to-b, #dfdfdf, #fff)'
+        display='flex'
+        width='100vw'
+        flexDirection='column'
+        alignItems='center'
+        justifyContent='center'
+      >
+        <Box marginY='1rem'>
+          <Link href='/' passHref>
+            <a>
+              <Image src={logo} alt='Logo'></Image>
+            </a>
+          </Link>
+        </Box>
+        <MainMenu></MainMenu>
+      </Box>
+    </>
   )
 }

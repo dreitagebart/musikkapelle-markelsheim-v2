@@ -27,24 +27,26 @@ const Page: NextPage = () => {
             alt='Gruppenbild auf dem Weinberg Markelsheim'
           />
         </Box>
-        <VStack gap='2rem'>
+        <VStack spacing='2rem'>
           <Box
             display='flex'
             flexDirection='column'
             justifyContent='center'
             alignItems='center'
+            maxWidth='860px'
           >
             <Heading size='md'>Dirigent</Heading>
             <Text>Stephan Deppisch</Text>
           </Box>
           <HStack
+            spacing={0}
+            flexWrap='wrap'
             alignItems='flex-start'
-            justifyContent='center'
-            gap='2rem'
+            justifyContent='space-between'
             width='100%'
             maxWidth='860px'
           >
-            <Box textAlign='center' width='100%'>
+            <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Klarinette
               </Heading>
@@ -59,7 +61,7 @@ const Page: NextPage = () => {
                 <ListItem>Simone Tatusch</ListItem>
               </List>
             </Box>
-            <Box textAlign='center' width='100%'>
+            <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Schlagwerk
               </Heading>
@@ -69,7 +71,7 @@ const Page: NextPage = () => {
                 <ListItem>Lena Kimmelmann</ListItem>
               </List>
             </Box>
-            <Box textAlign='center' width='100%'>
+            <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Querflöte
               </Heading>
@@ -83,13 +85,14 @@ const Page: NextPage = () => {
             </Box>
           </HStack>
           <HStack
+            spacing={0}
+            flexWrap='wrap'
             alignItems='flex-start'
-            justifyContent='center'
-            gap='2rem'
+            justifyContent='space-between'
             width='100%'
             maxWidth='860px'
           >
-            <Box textAlign='center' width='100%'>
+            <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Tenorhorn
               </Heading>
@@ -99,16 +102,18 @@ const Page: NextPage = () => {
                 <ListItem>Wilfried Zeihsel</ListItem>
               </List>
             </Box>
-            <Box textAlign='center' width='100%'>
+            <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Trompete
               </Heading>
               <List>
+                <ListItem>Jens Gundling</ListItem>
+                <ListItem>Cordelia Halbmann</ListItem>
                 <ListItem>Jochen Popp</ListItem>
                 <ListItem>Rebeca Schulz</ListItem>
               </List>
             </Box>
-            <Box textAlign='center' width='100%'>
+            <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Flügelhorn
               </Heading>
@@ -122,13 +127,14 @@ const Page: NextPage = () => {
             </Box>
           </HStack>
           <HStack
+            spacing={0}
+            flexWrap='wrap'
             alignItems='flex-start'
-            justifyContent='center'
-            gap='2rem'
+            justifyContent='space-between'
             width='100%'
             maxWidth='860px'
           >
-            <Box textAlign='center' width='100%'>
+            <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Bariton
               </Heading>
@@ -137,7 +143,7 @@ const Page: NextPage = () => {
                 <ListItem>Eugen Porasil</ListItem>
               </List>
             </Box>
-            <Box textAlign='center' width='100%'>
+            <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Posaune
               </Heading>
@@ -148,7 +154,7 @@ const Page: NextPage = () => {
                 <ListItem>Franz Schmidberger</ListItem>
               </List>
             </Box>
-            <Box textAlign='center' width='100%'>
+            <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Bass
               </Heading>
@@ -159,13 +165,14 @@ const Page: NextPage = () => {
             </Box>
           </HStack>
           <HStack
+            spacing={0}
+            flexWrap='wrap'
             alignItems='flex-start'
-            justifyContent='center'
-            gap='2rem'
+            justifyContent='space-between'
             width='100%'
             maxWidth='860px'
           >
-            <Box textAlign='center' width='100%'>
+            <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Horn
               </Heading>
@@ -174,7 +181,7 @@ const Page: NextPage = () => {
                 <ListItem>Sabine Strysak-Halbmann</ListItem>
               </List>
             </Box>
-            <Box textAlign='center' width='100%'>
+            <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Fagott
               </Heading>
@@ -182,7 +189,7 @@ const Page: NextPage = () => {
                 <ListItem>Tizian Halbmann</ListItem>
               </List>
             </Box>
-            <Box textAlign='center' width='100%'>
+            <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Saxophon
               </Heading>

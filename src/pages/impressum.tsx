@@ -1,13 +1,13 @@
-import { Box, Heading, Text } from '@chakra-ui/react'
+import { Box, Heading } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 
-import { Animate, Global } from '../components'
+import { Animate, Block, Global, PageHeader } from '../components'
 
 const Page: NextPage = () => {
   return (
     <Global title='Impressum'>
       <Animate>
-        <Heading>Impressum</Heading>
+        <PageHeader>Impressum</PageHeader>
         <Heading size='md' variant='my'>
           Verantwortlicher für den Internetauftritt
         </Heading>
@@ -24,7 +24,7 @@ const Page: NextPage = () => {
         <Heading size='md' variant='my'>
           Haftung für Inhalte
         </Heading>
-        <Text>
+        <Block>
           Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für
           die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir
           jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7
@@ -39,11 +39,11 @@ const Page: NextPage = () => {
           Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden
           von entsprechenden Rechtsverletzungen werden wir diese Inhalte
           umgehend entfernen.
-        </Text>
+        </Block>
         <Heading size='md' variant='my'>
           Haftung für Links
         </Heading>
-        <Text>
+        <Block>
           Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren
           Inhalte wir keinen Einfluss haben. Deshalb können wir für diese
           fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
@@ -67,11 +67,11 @@ const Page: NextPage = () => {
           Urheberrechtsverletzung aufmerksam werden, bitten wir um einen
           entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen
           werden wir derartige Inhalte umgehend entfernen.
-        </Text>
+        </Block>
         <Heading size='md' variant='my'>
           Datenschutz
         </Heading>
-        <Text>
+        <Block>
           Die Nutzung unserer Webseite ist in der Regel ohne Angabe
           personenbezogener Daten möglich. Soweit auf unseren Seiten
           personenbezogene Daten (beispielsweise Name, Anschrift oder
@@ -87,28 +87,28 @@ const Page: NextPage = () => {
           Die Betreiber der Seiten behalten sich ausdrücklich rechtliche
           Schritte im Falle der unverlangten Zusendung von Werbeinformationen,
           etwa durch Spam-Mails, vor.
-        </Text>
+        </Block>
         <Heading size='md' variant='my'>
           Kontaktanfragen / Kontaktmöglichkeit
         </Heading>
-        <Text>
+        <Block>
           Sofern Sie per Kontaktformular oder e-Mail mit uns in Kontakt treten,
           werden die dabei von Ihnen angegebenen Daten zur Bearbeitung Ihrer
           Anfrage genutzt. Die Angabe der Daten ist zur Bearbeitung und
           Beantwortung Ihre Anfrage erforderlich - ohne deren Bereitstellung
           können wir Ihre Anfrage nicht oder allenfalls eingeschränkt
           beantworten.
-        </Text>
-        <Text>
+        </Block>
+        <Block>
           Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 lit. b)
           DSGVO.
-        </Text>
-        <Text>
+        </Block>
+        <Block>
           Ihre Daten werden gelöscht, sofern Ihre Anfrage abschließend
           beantwortet worden ist und der Löschung keine gesetzlichen
           Aufbewahrungspflichten entgegenstehen, wie bspw. bei einer sich etwaig
           anschließenden Vertragsabwicklung.
-        </Text>
+        </Block>
       </Animate>
     </Global>
   )

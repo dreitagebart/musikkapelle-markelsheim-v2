@@ -2,7 +2,6 @@ import Link from 'next/link'
 import {
   Box,
   Divider,
-  Heading,
   HStack,
   Icon,
   LinkBox,
@@ -12,35 +11,41 @@ import {
 import { NextPage } from 'next'
 import { FaRegFilePdf } from 'react-icons/fa'
 
-import { Animate, ClubSubMenu, Global } from '../../components'
+import {
+  Animate,
+  Block,
+  ClubSubMenu,
+  Global,
+  PageHeader
+} from '../../components'
 
 const Page: NextPage = () => {
   return (
     <Global title='Mitgliedschaft'>
       <ClubSubMenu></ClubSubMenu>
       <Animate>
-        <Heading variant='my'>Aktive Mitgliedschaft</Heading>
-        <Text>
+        <PageHeader>Aktive Mitgliedschaft</PageHeader>
+        <Block>
           Du spielst bereits ein Blas- bzw. Schlaginstrument? Du bist auf der
           Suche nach einer guten Musikkapelle und guten Gemeinschaft?
-        </Text>
-        <Text variant='block'>
+        </Block>
+        <Block>
           Die Musikkapelle Markelsheim freut sich jederzeit über neue aktive
           Mitglieder - egal welches Instrument. Natürlich kannst du auch
           jederzeit mal unverbindlich in den Proben reinschnuppern.
-        </Text>
-        <Text variant='block'>
+        </Block>
+        <Block>
           Du spielst noch kein Instrument, aber du möchtest gerne eines
           erlernen? Hier gibt es in unserem Verein auch viele Möglichkeiten!!
           Sprich uns einfach an!
-        </Text>
-        <Text variant='block'>
+        </Block>
+        <Block>
           Wende dich am besten an unsere Vorsitzende{' '}
           <Link href='/contact'>Verena Hüttl</Link>.
-        </Text>
-        <Text variant='block'>Wir freuen uns auf dich!</Text>
-        <Heading variant='my'>Passive Mitgliedschaft</Heading>
-        <Text>
+        </Block>
+        <Block>Wir freuen uns auf dich!</Block>
+        <PageHeader>Passive Mitgliedschaft</PageHeader>
+        <Block>
           Sie sind Musikliebhaber spielen aber selbst kein Instrument? Freuen
           auch Sie sich über den Beitrag der Musikkapelle zum kulturellen Leben
           in Markelsheim? Ihnen gefällt unsere Musik, Sie finden unseren Verein
@@ -48,11 +53,11 @@ const Page: NextPage = () => {
           Meinung, dass es die Blasmusik verdient hat, gefördert zu werden?
           Wollen auch Sie die Musikkapelle Markelsheim in seinem Wirken, sowie
           seiner Jugendarbeit unterstützen?
-        </Text>
-        <Text variant='block'>
+        </Block>
+        <Block>
           Dann freuen wir uns sehr, Sie als passives Mitglied in der
           Musikkapelle Markelsheim begrüßen zu dürfen.
-        </Text>
+        </Block>
         <Box
           marginBottom='1rem'
           display='inline-block'

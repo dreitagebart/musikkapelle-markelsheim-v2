@@ -1,13 +1,13 @@
-import { Heading, HStack, List, ListItem, Text } from '@chakra-ui/react'
+import { Heading, HStack } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 
-import { Animate, Global } from '../components'
+import { Animate, Global, PageHeader } from '../components'
 
 const Page: NextPage = () => {
   return (
     <Global title='Links'>
       <Animate>
-        <Heading variant='mb'>Unser Netzwerk</Heading>
+        <PageHeader>Unser Netzwerk</PageHeader>
         <Heading size='md' variant='my'>
           Blasmusikverband
         </Heading>
