@@ -1,9 +1,9 @@
 import {
   Box,
   Heading,
-  HStack,
   List,
   ListItem,
+  SimpleGrid,
   Text,
   VStack
 } from '@chakra-ui/react'
@@ -33,18 +33,15 @@ const Page: NextPage = () => {
             flexDirection='column'
             justifyContent='center'
             alignItems='center'
-            maxWidth='860px'
+            // maxWidth='860px'
           >
             <Heading size='md'>Dirigent</Heading>
             <Text>Stephan Deppisch</Text>
           </Box>
-          <HStack
-            spacing={0}
-            flexWrap='wrap'
-            alignItems='flex-start'
-            justifyContent='space-between'
-            width='100%'
-            maxWidth='860px'
+          <SimpleGrid
+            columns={{ sm: 2, lg: 3, xl: 4 }}
+            spacingX='4rem'
+            spacingY='2rem'
           >
             <Box textAlign='center'>
               <Heading size='md' variant='mb'>
@@ -83,15 +80,6 @@ const Page: NextPage = () => {
                 <ListItem>Kristin Peyerl</ListItem>
               </List>
             </Box>
-          </HStack>
-          <HStack
-            spacing={0}
-            flexWrap='wrap'
-            alignItems='flex-start'
-            justifyContent='space-between'
-            width='100%'
-            maxWidth='860px'
-          >
             <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Tenorhorn
@@ -125,15 +113,6 @@ const Page: NextPage = () => {
                 <ListItem>Anton Schneider</ListItem>
               </List>
             </Box>
-          </HStack>
-          <HStack
-            spacing={0}
-            flexWrap='wrap'
-            alignItems='flex-start'
-            justifyContent='space-between'
-            width='100%'
-            maxWidth='860px'
-          >
             <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Bariton
@@ -163,15 +142,6 @@ const Page: NextPage = () => {
                 <ListItem>Alois Zöllinger</ListItem>
               </List>
             </Box>
-          </HStack>
-          <HStack
-            spacing={0}
-            flexWrap='wrap'
-            alignItems='flex-start'
-            justifyContent='space-between'
-            width='100%'
-            maxWidth='860px'
-          >
             <Box textAlign='center'>
               <Heading size='md' variant='mb'>
                 Horn
@@ -197,7 +167,7 @@ const Page: NextPage = () => {
                 <ListItem>Nina Helebrand</ListItem>
               </List>
             </Box>
-          </HStack>
+          </SimpleGrid>
         </VStack>
       </Animate>
     </Global>
