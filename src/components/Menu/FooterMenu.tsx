@@ -1,12 +1,14 @@
 import React from 'react'
-import { Button, Stack } from '@chakra-ui/react'
+import { Stack } from '@chakra-ui/react'
 
 import { FooterMenuLink } from './Links'
-import { signIn } from 'next-auth/react'
+import { signIn, signOut, useSession } from 'next-auth/react'
 
 interface Props {}
 
 export const FooterMenu: React.FC<Props> = () => {
+  const { data: session } = useSession()
+
   return (
     <Stack
       marginTop='1rem'
@@ -17,15 +19,27 @@ export const FooterMenu: React.FC<Props> = () => {
       <FooterMenuLink href='/club/membership'>Mitglied werden</FooterMenuLink>
       <FooterMenuLink href='/contact'>Kontakt</FooterMenuLink>
       <FooterMenuLink href='/impressum'>Impressum</FooterMenuLink>
-      <FooterMenuLink
-        href='/'
-        onClick={(e) => {
-          e.preventDefault()
-          signIn()
-        }}
-      >
-        Login
-      </FooterMenuLink>
+      {session ? (
+        <FooterMenuLink
+          href='/'
+          onClick={(e) => {
+            e.preventDefault()
+            signOut()
+          }}
+        >
+          Abmelden
+        </FooterMenuLink>
+      ) : (
+        <FooterMenuLink
+          href='/'
+          onClick={(e) => {
+            e.preventDefault()
+            signIn('wordpress')
+          }}
+        >
+          Login
+        </FooterMenuLink>
+      )}
     </Stack>
   )
 }
