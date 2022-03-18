@@ -1,0 +1,11 @@
+overwrite: true
+schema: 'http://musikkapelle-markelsheim.de/blog/graphql'
+documents: 'src/lib/graphql/**/*.graphql'
+generates:
+  src/lib/graphql/types.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+  ./graphql.schema.json:
+    plugins:
+      - 'introspection'
