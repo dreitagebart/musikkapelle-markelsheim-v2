@@ -5,8 +5,19 @@ import WordpressProvider from 'next-auth/providers/wordpress'
 export default NextAuth({
   providers: [
     WordpressProvider({
-      authorization:
-        'https://public-api.wordpress.com/oauth2/authorize?scope=auth&blog=http://musikkapelle-markelsheim.de/blog',
+      authorization: {
+        url: 'https://public-api.wordpress.com/oauth2/authorize',
+        params: {
+          state: '',
+          scope: 'auth',
+          client_id: process.env.WP_CLIENT_ID,
+          redirect_uri:
+            'https://musikkapelle-markelsheim-v2.vercel.app/api/auth/callback/wordpress',
+          response_type: 'token',
+          blog: 'http://musikkapelle-markelsheim.de/blog'
+        }
+      },
+      token: 'https://public-api.wordpress.com/oauth2/token',
       clientId: process.env.WP_CLIENT_ID,
       clientSecret: process.env.WP_CLIENT_SECRET
     })
