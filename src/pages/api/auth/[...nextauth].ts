@@ -5,10 +5,10 @@ import WordpressProvider from 'next-auth/providers/wordpress'
 export default NextAuth({
   providers: [
     WordpressProvider({
+      checks: 'none',
       authorization: {
         url: 'https://public-api.wordpress.com/oauth2/authorize',
         params: {
-          state: '',
           scope: 'auth',
           client_id: process.env.WP_CLIENT_ID,
           redirect_uri:
