@@ -5,6 +5,9 @@ import WordpressProvider from 'next-auth/providers/wordpress'
 export default NextAuth({
   providers: [
     WordpressProvider({
+      id: 'wordpress',
+      type: 'oauth',
+      name: 'MKM',
       authorization: {
         url: 'https://public-api.wordpress.com/oauth2/authorize',
         params: {
@@ -17,6 +20,15 @@ export default NextAuth({
         }
       },
       token: 'https://public-api.wordpress.com/oauth2/token',
+      userinfo: 'https://public-api.wordpress.com/rest/v1/me',
+      profile: (profile) => {
+        return {
+          id: profile.ID,
+          name: profile.display_name,
+          email: profile.email,
+          image: profile.avatar_URL
+        }
+      },
       clientId: process.env.WP_CLIENT_ID,
       clientSecret: process.env.WP_CLIENT_SECRET
     })

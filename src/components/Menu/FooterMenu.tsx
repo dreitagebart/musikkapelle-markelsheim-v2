@@ -34,10 +34,10 @@ export const FooterMenu: React.FC<Props> = () => {
           href='/'
           onClick={(e) => {
             e.preventDefault()
-            signIn('wordpress')
+            signIn()
           }}
         >
-          Login
+          Anmelden
         </FooterMenuLink>
       )}
     </Stack>
