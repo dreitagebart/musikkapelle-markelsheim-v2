@@ -8,7 +8,7 @@ import { apolloClient } from '../lib/apollo'
 import { GetEventsQuery, GetEventsQueryVariables } from '../lib/graphql/types'
 
 export const getStaticProps = async () => {
-  const { data } = await apolloClient.query<
+  const queryResult = await apolloClient.query<
     GetEventsQuery,
     GetEventsQueryVariables
   >({
@@ -17,7 +17,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      events: data.events
+      events: queryResult.data.events
     },
     revalidate: 60
   }
