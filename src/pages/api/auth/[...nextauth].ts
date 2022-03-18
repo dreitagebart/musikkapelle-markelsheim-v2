@@ -5,7 +5,6 @@ import WordpressProvider from 'next-auth/providers/wordpress'
 export default NextAuth({
   providers: [
     WordpressProvider({
-      checks: 'none',
       authorization: {
         url: 'https://public-api.wordpress.com/oauth2/authorize',
         params: {
@@ -21,9 +20,5 @@ export default NextAuth({
       clientId: process.env.WP_CLIENT_ID,
       clientSecret: process.env.WP_CLIENT_SECRET
     })
-    // GoogleProvider({
-    //   clientId: process.env.GOOGLE_CLIENT_ID,
-    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET
-    // })
   ]
 })
