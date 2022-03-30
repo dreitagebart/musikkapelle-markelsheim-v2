@@ -33,7 +33,7 @@ export const SubMenuLink: React.FC<Props> = ({ href, children, onClick }) => {
           paddingY='0.4rem'
           paddingX='0.8rem'
           transition='all 300ms ease-in'
-          _hover={{ backgroundColor: 'red.50', color: '#333' }}
+          _hover={{ backgroundColor: 'red.500', color: 'gray.50' }}
         >
           {children}
         </Box>

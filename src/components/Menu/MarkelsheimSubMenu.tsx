@@ -8,7 +8,7 @@ interface Props {}
 export const MarkelsheimSubMenu: React.FC<Props> = () => {
   return (
     <>
-      <HStack fontFamily='Montserrat Light' flexWrap='wrap' spacing={0}>
+      <HStack fontFamily='Montserrat' flexWrap='wrap' spacing='0.8rem'>
         <SubMenuLink href='/markelsheim/region'>Region</SubMenuLink>
         <SubMenuLink href='/markelsheim/history'>Geschichte</SubMenuLink>
       </HStack>

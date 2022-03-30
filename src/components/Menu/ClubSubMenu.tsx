@@ -8,7 +8,7 @@ interface Props {}
 export const ClubSubMenu: React.FC<Props> = () => {
   return (
     <>
-      <HStack fontFamily='Montserrat Light' spacing={0} flexWrap='wrap'>
+      <HStack fontFamily='Montserrat' spacing='0.8rem' flexWrap='wrap'>
         <SubMenuLink href='/club/about'>Über uns</SubMenuLink>
         <SubMenuLink href='/club/membership'>Mitgliedschaft</SubMenuLink>
         <SubMenuLink href='/club/recruitment'>Ausbildung</SubMenuLink>

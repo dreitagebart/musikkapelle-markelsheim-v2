@@ -52,7 +52,7 @@ const styles = {
     '.content a': {
       transition: 'color 300ms ease-in',
       fontWeight: 'bold',
-      color: 'red.900'
+      color: 'red.500'
     },
     '.content a:hover': {
       color: 'red.600'
