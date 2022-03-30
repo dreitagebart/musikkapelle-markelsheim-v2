@@ -8,17 +8,21 @@ const Page: NextPageExtended = () => {
     <Global title='Links'>
       <Animate>
         <PageHeader>Unser Netzwerk</PageHeader>
-        <Heading size='md' variant='my'>
+        <Heading wordBreak='break-word' size='md' variant='my'>
           Blasmusikverband
         </Heading>
         <HStack>
-          <Heading size='sm'>Blasmusikverband Baden Württemberg</Heading>
+          <Heading wordBreak='break-word' size='sm'>
+            Blasmusikverband Baden Württemberg
+          </Heading>
           <a href='http://www.bvbw-online.de' target='_blank' rel='noreferrer'>
             www.bvbw-online.de
           </a>
         </HStack>
         <HStack>
-          <Heading size='sm'>Kreisverband Hohenlohe</Heading>
+          <Heading wordBreak='break-word' size='sm'>
+            Kreisverband Hohenlohe
+          </Heading>
           <a
             href='http://www.bvbw-hohenlohe.de'
             target='_blank'
@@ -27,17 +31,21 @@ const Page: NextPageExtended = () => {
             www.bvbw-hohenlohe.de
           </a>
         </HStack>
-        <Heading size='md' variant='my'>
+        <Heading wordBreak='break-word' size='md' variant='my'>
           Unsere Heimat
         </Heading>
         <HStack>
-          <Heading size='sm'>Wein- und Erholungsort Markelsheim</Heading>
+          <Heading wordBreak='break-word' size='sm'>
+            Wein- und Erholungsort Markelsheim
+          </Heading>
           <a href='http://www.markelsheim.de' target='_blank' rel='noreferrer'>
             www.markelsheim.de
           </a>
         </HStack>
         <HStack>
-          <Heading size='sm'>Große Kreisstadt Bad Mergentheim</Heading>
+          <Heading wordBreak='break-word' size='sm'>
+            Große Kreisstadt Bad Mergentheim
+          </Heading>
           <a
             href='http://www.bad-mergentheim.de'
             target='_blank'
@@ -47,7 +55,9 @@ const Page: NextPageExtended = () => {
           </a>
         </HStack>
         <HStack>
-          <Heading size='sm'>&quot;Liebliches Taubertal&quot;</Heading>
+          <Heading wordBreak='break-word' size='sm'>
+            &quot;Liebliches Taubertal&quot;
+          </Heading>
           <a
             href='http://www.liebliches-taubertal.de'
             target='_blank'
@@ -60,7 +70,9 @@ const Page: NextPageExtended = () => {
           Vereine aus Markelsheim im Internet
         </Heading>
         <HStack>
-          <Heading size='sm'>Motorradfreunde Markelsheim</Heading>
+          <Heading wordBreak='break-word' size='sm'>
+            Motorradfreunde Markelsheim
+          </Heading>
           <a
             href='https://m.facebook.com/Motorradfreunde-Markelsheim-eV-1594129114019308/'
             target='_blank'
@@ -70,7 +82,9 @@ const Page: NextPageExtended = () => {
           </a>
         </HStack>
         <HStack>
-          <Heading size='sm'>Freiwillige Feuerwehr Markelsheim</Heading>
+          <Heading wordBreak='break-word' size='sm'>
+            Freiwillige Feuerwehr Markelsheim
+          </Heading>
           <a
             href='http://www.feuerwehr-markelsheim.de'
             target='_blank'
@@ -80,7 +94,9 @@ const Page: NextPageExtended = () => {
           </a>
         </HStack>
         <HStack>
-          <Heading size='sm'>Winzertanzgruppe Markelsheim</Heading>
+          <Heading wordBreak='break-word' size='sm'>
+            Winzertanzgruppe Markelsheim
+          </Heading>
           <a
             href='http://www.winzertanzgruppe.de'
             target='_blank'
@@ -90,7 +106,9 @@ const Page: NextPageExtended = () => {
           </a>
         </HStack>
         <HStack>
-          <Heading size='sm'>Minigolfpark Leiser</Heading>
+          <Heading wordBreak='break-word' size='sm'>
+            Minigolfpark Leiser
+          </Heading>
           <a
             href='http://www.minigolf-markelsheim.de'
             target='_blank'
