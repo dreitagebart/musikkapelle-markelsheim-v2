@@ -1,5 +1,4 @@
 import { Box } from '@chakra-ui/react'
-import type { NextPage } from 'next'
 
 import {
   Animate,
@@ -8,8 +7,9 @@ import {
   Global,
   PageHeader
 } from '../../components'
+import { NextPageExtended } from '../../utils'
 
-const Page: NextPage = () => {
+const Page: NextPageExtended = () => {
   return (
     <Global title='Über uns'>
       <ClubSubMenu></ClubSubMenu>
@@ -52,5 +52,7 @@ const Page: NextPage = () => {
     </Global>
   )
 }
+
+Page.auth = false
 
 export default Page

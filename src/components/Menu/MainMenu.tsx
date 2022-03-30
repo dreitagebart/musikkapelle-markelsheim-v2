@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Avatar,
   Box,
   Button,
   Collapse,
@@ -12,7 +13,8 @@ import {
 } from '@chakra-ui/react'
 
 import { MainMenuLink } from './Links'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { FaBars, FaTimes, FaUserAlt } from 'react-icons/fa'
+import { useSession } from 'next-auth/react'
 
 interface Props {}
 
@@ -58,8 +60,23 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({ onClick }) => {
+  const { data: session } = useSession()
+
+  const user = session?.user
+
   return (
     <>
+      {user ? (
+        <MainMenuLink href='/member/profile'>
+          <Avatar
+            color='white'
+            bg='red.500'
+            icon={<Icon as={FaUserAlt}></Icon>}
+            src={user.image!}
+            name={user.name!}
+          ></Avatar>
+        </MainMenuLink>
+      ) : null}
       <MainMenuLink href='/club' onClick={onClick}>
         Verein
       </MainMenuLink>

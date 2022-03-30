@@ -167,13 +167,14 @@ const styles = {
       borderRadius: '16px'
     },
     'html, body': {
-      fontSize: '18px',
-      color: 'gray.600',
       overflowX: 'hidden'
     },
     body: {
+      fontSize: '18px',
+      color: 'gray.600',
       minHeight: '100vh !important',
       position: 'relative'
+      // overflowY: 'scroll'
     },
     'body::after': {
       content: '""',
@@ -186,6 +187,19 @@ const styles = {
       left: 0,
       right: 0,
       height: '140px'
+    },
+    '*::-webkit-scrollbar': {
+      width: '16px'
+    },
+    '*::-webkit-scrollbar-track': {
+      background: 'gray.50'
+    },
+    '*::-webkit-scrollbar-thumb': {
+      backgroundColor: 'gray.300',
+      borderRadius: '8px',
+      borderStyle: 'solid',
+      borderWidth: '1px',
+      borderColor: 'gray.100'
     }
   }
 }

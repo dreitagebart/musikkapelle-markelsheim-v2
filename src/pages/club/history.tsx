@@ -1,5 +1,3 @@
-import type { NextPage } from 'next'
-
 import {
   Animate,
   Block,
@@ -8,8 +6,9 @@ import {
   Global,
   PageHeader
 } from '../../components'
+import { NextPageExtended } from '../../utils'
 
-const Page: NextPage = () => {
+const Page: NextPageExtended = () => {
   return (
     <Global title='Geschichte'>
       <ClubSubMenu></ClubSubMenu>
@@ -76,5 +75,7 @@ const Page: NextPage = () => {
     </Global>
   )
 }
+
+Page.auth = false
 
 export default Page

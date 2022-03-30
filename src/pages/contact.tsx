@@ -20,7 +20,6 @@ import {
   Text,
   Textarea
 } from '@chakra-ui/react'
-import { NextPage } from 'next'
 import {
   FaPhone,
   FaPaperPlane,
@@ -30,6 +29,7 @@ import {
 } from 'react-icons/fa'
 
 import { Animate, Global } from '../components'
+import { NextPageExtended } from '../utils'
 
 interface ApiResponse {
   error: boolean
@@ -51,7 +51,7 @@ interface FormState {
   status: FormStatus
 }
 
-const Page: NextPage = () => {
+const Page: NextPageExtended = () => {
   const [form, setForm] = useState<FormState>({
     name: '',
     email: '',
@@ -381,5 +381,7 @@ const Page: NextPage = () => {
     </Global>
   )
 }
+
+Page.auth = false
 
 export default Page

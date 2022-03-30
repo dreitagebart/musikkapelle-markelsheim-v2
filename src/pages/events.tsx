@@ -1,11 +1,12 @@
 import moment from 'moment'
 import { Box, Heading, Text } from '@chakra-ui/react'
-import type { InferGetStaticPropsType, NextPage } from 'next'
+import type { InferGetStaticPropsType } from 'next'
 
 import GET_EVENTS from '../lib/graphql/query/GetEvents.graphql'
 import { Animate, Global, PageHeader } from '../components'
 import { apolloClient } from '../lib/apollo'
 import { GetEventsQuery, GetEventsQueryVariables } from '../lib/graphql/types'
+import { NextPageExtended } from '../utils'
 
 export const getStaticProps = async () => {
   const queryResult = await apolloClient.query<
@@ -23,9 +24,9 @@ export const getStaticProps = async () => {
   }
 }
 
-const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  events
-}) => {
+const Page: NextPageExtended<
+  InferGetStaticPropsType<typeof getStaticProps>
+> = ({ events }) => {
   return (
     <Global title='Termine'>
       <Animate>
@@ -56,5 +57,7 @@ const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     </Global>
   )
 }
+
+Page.auth = false
 
 export default Page

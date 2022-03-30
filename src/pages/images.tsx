@@ -1,11 +1,10 @@
-import { NextPage } from 'next'
-
 import { Animate, Global, Slider } from '../components'
+import { NextPageExtended } from '../utils'
 
 const SLIDE_COUNT = 14
 const slides = Array.from(Array(SLIDE_COUNT).keys())
 
-const Page: NextPage = () => {
+const Page: NextPageExtended = () => {
   return (
     <Global title='Bilder'>
       <Animate>
@@ -14,5 +13,7 @@ const Page: NextPage = () => {
     </Global>
   )
 }
+
+Page.auth = false
 
 export default Page

@@ -7,13 +7,13 @@ import {
   Text,
   VStack
 } from '@chakra-ui/react'
-import type { NextPage } from 'next'
 import Image from 'next/image'
 
 import groupImage from '../../assets/images/mkm01.jpeg'
 import { Animate, ClubSubMenu, Global } from '../../components'
+import { NextPageExtended } from '../../utils'
 
-const Page: NextPage = () => {
+const Page: NextPageExtended = () => {
   return (
     <Global title='Musikkapelle'>
       <ClubSubMenu></ClubSubMenu>
@@ -173,5 +173,7 @@ const Page: NextPage = () => {
     </Global>
   )
 }
+
+Page.auth = false
 
 export default Page

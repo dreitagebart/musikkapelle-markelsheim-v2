@@ -1,36 +1,71 @@
 import NextAuth from 'next-auth'
-// import GoogleProvider from 'next-auth/providers/google'
-import WordpressProvider from 'next-auth/providers/wordpress'
+import GoogleProvider from 'next-auth/providers/google'
+import FacebookProvider from 'next-auth/providers/facebook'
+import InstagramProvider from 'next-auth/providers/instagram'
+
+import userlist from './userlist.json'
 
 export default NextAuth({
   providers: [
-    WordpressProvider({
-      id: 'wordpress',
-      type: 'oauth',
-      name: 'MKM',
-      authorization: {
-        url: 'https://public-api.wordpress.com/oauth2/authorize',
-        params: {
-          scope: 'global',
-          client_id: process.env.WP_CLIENT_ID,
-          redirect_uri:
-            'https://musikkapelle-markelsheim-v2.vercel.app/api/auth/callback/wordpress',
-          response_type: 'token'
-          // blog: 'http://musikkapelle-markelsheim.de/blog'
-        }
-      },
-      token: 'https://public-api.wordpress.com/oauth2/token',
-      userinfo: 'https://public-api.wordpress.com/rest/v1/me',
-      profile: (profile) => {
-        return {
-          id: profile.ID,
-          name: profile.display_name,
-          email: profile.email,
-          image: profile.avatar_URL
-        }
-      },
-      clientId: process.env.WP_CLIENT_ID,
-      clientSecret: process.env.WP_CLIENT_SECRET
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!
+    }),
+    FacebookProvider({
+      clientId: process.env.FACEBOOK_CLIENT_ID!,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET!
+    }),
+    InstagramProvider({
+      clientId: process.env.INSTAGRAM_CLIENT_ID,
+      clientSecret: process.env.INSTAGRAM_CLIENT_SECRET
     })
-  ]
+  ],
+  pages: {
+    signIn: '/member/login'
+  },
+  callbacks: {
+    redirect: ({ url, baseUrl }) => {
+      console.log('redirect')
+      console.log('url', url)
+      console.log('baseUrl', baseUrl)
+
+      if (url.startsWith(baseUrl)) {
+        console.log('redirect to url')
+        return url
+      }
+      // Allows relative callback URLs
+      if (url.startsWith('/')) {
+        console.log('relative callback URL')
+        return new URL(url, baseUrl).toString()
+      }
+
+      console.log('redirect to baseUrl')
+      return baseUrl
+    },
+    signIn: async ({ user, account, profile, email, credentials }) => {
+      console.log('triggered event sign in:')
+      console.log('user', user)
+      console.log('account', account)
+      console.log('profile', profile)
+      console.log('email', email)
+      console.log('credentials', credentials)
+
+      if (userlist.hasOwnProperty(account.provider)) {
+        const provider = account.provider as keyof typeof userlist
+        const mail = user.email
+
+        if (!mail) {
+          return '/member/noauth'
+        }
+
+        if (userlist[provider].includes(mail)) {
+          return true
+        }
+
+        return '/member/noauth'
+      }
+
+      return '/member/noauth'
+    }
+  }
 })

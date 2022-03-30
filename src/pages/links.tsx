@@ -1,9 +1,9 @@
 import { Heading, HStack } from '@chakra-ui/react'
-import type { NextPage } from 'next'
 
 import { Animate, Global, PageHeader } from '../components'
+import { NextPageExtended } from '../utils'
 
-const Page: NextPage = () => {
+const Page: NextPageExtended = () => {
   return (
     <Global title='Links'>
       <Animate>
@@ -103,5 +103,7 @@ const Page: NextPage = () => {
     </Global>
   )
 }
+
+Page.auth = false
 
 export default Page

@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import { Box } from '@chakra-ui/react'
 
@@ -6,7 +7,6 @@ import leafLeft from '../../assets/images/leaves_left.png'
 import leafRight from '../../assets/images/leaves_right.png'
 import logo from '../../assets/images/logo.png'
 import { MainMenu } from '..'
-import Link from 'next/link'
 
 interface Props {}
 
@@ -45,6 +45,7 @@ export const Header: React.FC<Props> = () => {
             </a>
           </Link>
         </Box>
+
         <MainMenu></MainMenu>
       </Box>
     </>
