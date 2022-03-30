@@ -4,27 +4,13 @@ import { getProviders, signIn } from 'next-auth/react'
 import { FaFacebook, FaGoogle, FaInstagram } from 'react-icons/fa'
 
 import { Animate, Block, Global, PageHeader } from '../../components'
-import { NextPageExtended } from '../../utils'
+import { getIcon, NextPageExtended } from '../../utils'
 
 export const getServerSideProps = async () => {
   const providers = await getProviders()
 
   return {
     props: { providers }
-  }
-}
-
-const getIcon = (provider: string) => {
-  switch (provider) {
-    case 'facebook': {
-      return FaFacebook
-    }
-    case 'google': {
-      return FaGoogle
-    }
-    case 'instagram': {
-      return FaInstagram
-    }
   }
 }
 
@@ -46,7 +32,7 @@ const Page: NextPageExtended<
                 colorScheme='red'
                 onClick={() =>
                   signIn(provider.id, {
-                    callbackUrl: `http://localhost:3000/member/welcome`
+                    callbackUrl: `https://musikkapelle-markelsheim-v2.vercel.app/member/welcome`
                   })
                 }
                 key={provider.id}

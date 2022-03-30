@@ -31,7 +31,7 @@ const Page: NextPageExtended<
                 colorScheme='red'
                 onClick={() =>
                   signIn(provider.id, {
-                    callbackUrl: `http://localhost:3000/member/welcome`
+                    callbackUrl: `https://musikkapelle-markelsheim-v2.vercel.app/member/welcome`
                   })
                 }
                 key={provider.id}
