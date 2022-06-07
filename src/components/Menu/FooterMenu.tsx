@@ -2,12 +2,12 @@ import React from 'react'
 import { HStack } from '@chakra-ui/react'
 
 import { FooterMenuLink } from './Links'
-import { signIn, signOut, useSession } from 'next-auth/react'
+// import { signIn, signOut, useSession } from 'next-auth/react'
 
 interface Props {}
 
 export const FooterMenu: React.FC<Props> = () => {
-  const { data: session } = useSession()
+  // const { data: session } = useSession()
 
   return (
     <HStack
@@ -19,7 +19,7 @@ export const FooterMenu: React.FC<Props> = () => {
       <FooterMenuLink href='/club/membership'>Mitglied werden</FooterMenuLink>
       <FooterMenuLink href='/contact'>Kontakt</FooterMenuLink>
       <FooterMenuLink href='/impressum'>Impressum</FooterMenuLink>
-      {session ? (
+      {/* {session ? (
         <FooterMenuLink
           href='/'
           onClick={(e) => {
@@ -31,7 +31,7 @@ export const FooterMenu: React.FC<Props> = () => {
         </FooterMenuLink>
       ) : (
         <FooterMenuLink href='/member/login'>Anmelden</FooterMenuLink>
-      )}
+      )} */}
     </HStack>
   )
 }

@@ -16,9 +16,17 @@ export const getStaticProps = async () => {
     query: GET_EVENTS
   })
 
+  const events = [...queryResult!.data!.events!.nodes!]
+
+  const sortedEvents = events.sort(
+    (a, b) =>
+      moment(a!.add_info!.datum).toDate().getTime() -
+      moment(b!.add_info!.datum).toDate().getTime()
+  )
+
   return {
     props: {
-      events: queryResult.data.events
+      events: sortedEvents
     },
     revalidate: 60
   }
@@ -31,7 +39,7 @@ const Page: NextPageExtended<
     <Global title='Termine'>
       <Animate>
         <PageHeader>Termine</PageHeader>
-        {events?.nodes?.map((event) => {
+        {events?.map((event) => {
           return (
             <Box
               maxWidth='620px'

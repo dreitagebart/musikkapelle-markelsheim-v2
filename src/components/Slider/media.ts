@@ -22,23 +22,23 @@ interface Image {
 }
 
 const media: Array<Image> = [
-  { image: slide1, description: 'Bärlauchknacker' },
-  { image: slide2, description: 'Blutwurst' },
-  { image: slide3, description: 'Debreziner' },
-  { image: slide4, description: 'Schinkenwurst' },
-  { image: slide5, description: 'Bierschinken' },
-  { image: slide6, description: 'Volkswagen Currywurst' },
-  { image: slide7, description: 'Lyoner' },
-  { image: slide8, description: 'Salami' },
-  { image: slide9, description: 'Bierkugel' },
-  { image: slide10, description: 'Stabenwurst' },
-  { image: slide11, description: 'Appenzeller Siedwurst' },
-  { image: slide12, description: 'Feine Extrawurst' },
-  { image: slide13, description: 'Thüringer Rostbratwurst' },
-  { image: slide14, description: 'Rød pølse' },
-  { image: slide15, description: 'Nordhäuser Bratwurst' },
-  { image: slide16, description: 'Pfälzer Saumagen' },
-  { image: slide17, description: 'Böhmische Weinbratwurst' }
+  { image: slide1, description: '2019 Weinberg' },
+  { image: slide2, description: '2019 Weinberg' },
+  { image: slide3, description: '2019 Weinberg' },
+  { image: slide4, description: '2018 Zehntkeller' },
+  { image: slide5, description: '2018 Zehntkeller' },
+  { image: slide6, description: '2014 Rathaus' },
+  { image: slide7, description: '2014 Rathaus' },
+  { image: slide8, description: '2014 Rathaus' },
+  { image: slide9, description: '2014 Rathaus' },
+  { image: slide10, description: '2012 Mühlwiese' },
+  { image: slide11, description: '2012 Mühlwiese' },
+  { image: slide12, description: '2008 Fronhof' },
+  { image: slide13, description: '2008 Fronhof' },
+  { image: slide14, description: '2008 Fronhof' },
+  { image: slide15, description: '2008 Weinpresse' },
+  { image: slide16, description: '2008 Weinpresse' },
+  { image: slide17, description: '2008 Fronhof' }
 ]
 
 export const getMedia = (index: number) => media[index % media.length]

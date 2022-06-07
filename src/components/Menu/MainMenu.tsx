@@ -14,7 +14,7 @@ import {
 
 import { MainMenuLink } from './Links'
 import { FaBars, FaTimes, FaUserAlt } from 'react-icons/fa'
-import { useSession } from 'next-auth/react'
+// import { useSession } from 'next-auth/react'
 
 interface Props {}
 
@@ -60,13 +60,13 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({ onClick }) => {
-  const { data: session } = useSession()
+  // const { data: session } = useSession()
 
-  const user = session?.user
+  // const user = session?.user
 
   return (
     <>
-      {user ? (
+      {/* {user ? (
         <MainMenuLink href='/member/profile'>
           <Avatar
             color='white'
@@ -76,7 +76,7 @@ const Menu: React.FC<MenuProps> = ({ onClick }) => {
             name={user.name!}
           ></Avatar>
         </MainMenuLink>
-      ) : null}
+      ) : null} */}
       <MainMenuLink href='/club' onClick={onClick}>
         Verein
       </MainMenuLink>

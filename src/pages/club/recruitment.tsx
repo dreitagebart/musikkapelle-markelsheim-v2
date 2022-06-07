@@ -16,16 +16,24 @@ const Page: NextPageExtended = () => {
       <Animate>
         <PageHeader>Ausbildung</PageHeader>
         <Block>
-          Der Nachwuchs ist unsere Zukunft und deswegen bilden wir auch gerne
-          verschiedene Instrumente über unsere Musikkapelle aus. Die Ausbildung
-          erfolgt über Musikerinnen und Musiker aus dem Verein. Ziel ist die
-          Integration in die Kapelle. Außerdem bieten wir dir ein Leihinstrument
-          von unserem Verein für die Ausbildung, soweit dies vorhanden ist, an.
+          Der Nachwuchs ist unsere Zukunft. Deswegen liegt es uns am Herzen,
+          dass Kindern und Jugendlichen die Möglichkeit gegeben wird ein
+          Instrument zu erlernen. Die Ausbildung der Instrumente erfolgt über
+          die Jugendmusikschule Bad Mergentheim.
         </Block>
         <Block>
-          Bereits während der Ausbildung ist es möglich im Jugendorchester
-          mitzuspielen. Dort absolvieren die Kinder und Jugendlichen bereits
-          erste Auftritte und werden in das Vereinsleben integriert.
+          Als Ergänzung zum Einzel- oder Gruppenunterricht soll wieder ein
+          Jugendorchester aufgebaut werden, um das gemeinsame Spielen zu fördern
+          und die Freude an der Musik zu verstärken.
+        </Block>
+        <Block>
+          Damit sich interessierte Nachwuchsmusiker von morgen in unser
+          Vereinsleben einfinden können, bieten wir dieses Jahr am{' '}
+          <b>Samstag, den 23.07.2022</b> eine &laquo;Instrumentenrally&raquo; in
+          der Grundschule Markelsheim an.
+        </Block>
+        <Block>
+          <Link href='/rally'>Hier geht es zur Anmeldung</Link>
         </Block>
         <Block>
           Solltest du Interesse an einer Ausbildung haben, so wende dich bitte

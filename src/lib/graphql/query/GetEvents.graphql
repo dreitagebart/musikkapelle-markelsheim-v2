@@ -2,7 +2,6 @@ query GetEvents {
   events {
     nodes {
       id
-      uri
       title(format: RENDERED)
       add_info {
         datum

@@ -1,7 +1,7 @@
 import { Animate, Global, Slider } from '../components'
 import { NextPageExtended } from '../utils'
 
-const SLIDE_COUNT = 14
+const SLIDE_COUNT = 17
 const slides = Array.from(Array(SLIDE_COUNT).keys())
 
 const Page: NextPageExtended = () => {

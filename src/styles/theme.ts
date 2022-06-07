@@ -179,14 +179,14 @@ const styles = {
     'body::after': {
       content: '""',
       display: 'block',
-      height: '140px'
+      height: '200px'
     },
     footer: {
       position: 'absolute',
       bottom: 0,
       left: 0,
       right: 0,
-      height: '140px'
+      height: '200px'
     },
     '*::-webkit-scrollbar': {
       width: '16px'
