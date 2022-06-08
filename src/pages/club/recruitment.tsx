@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/react'
 import Link from 'next/link'
 
 import {
@@ -33,11 +34,15 @@ const Page: NextPageExtended = () => {
           der Grundschule Markelsheim an.
         </Block>
         <Block>
-          <Link href='/rally'>Hier geht es zur Anmeldung</Link>
+          <Link href='/rally' passHref>
+            <Button variant='solid' colorScheme='red'>
+              Anmeldeformular zur Instrumentenrally
+            </Button>
+          </Link>
         </Block>
         <Block>
           Solltest du Interesse an einer Ausbildung haben, so wende dich bitte
-          an <Link href='/contact'>Verena Hüttl</Link>.
+          an unseren Vereinsvorstand <Link href='/contact'>Verena Hüttl</Link>.
         </Block>
       </Animate>
     </Global>
