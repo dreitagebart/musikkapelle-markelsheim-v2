@@ -1,4 +1,4 @@
-// import { SessionProvider } from 'next-auth/react'
+import { SessionProvider } from 'next-auth/react'
 import { ChakraProvider } from '@chakra-ui/react'
 
 import { Layout, Auth } from '../components'
@@ -11,20 +11,20 @@ function MKMApp({
   pageProps: { session, ...pageProps }
 }: AppPropsExtended) {
   return (
-    // <SessionProvider session={session}>
-    <ChakraProvider resetCSS theme={theme}>
-      <Fonts></Fonts>
-      <Layout>
-        {Component.auth ? (
-          <Auth>
+    <SessionProvider session={session}>
+      <ChakraProvider resetCSS theme={theme}>
+        <Fonts></Fonts>
+        <Layout>
+          {Component.auth ? (
+            <Auth>
+              <Component {...pageProps} />
+            </Auth>
+          ) : (
             <Component {...pageProps} />
-          </Auth>
-        ) : (
-          <Component {...pageProps} />
-        )}
-      </Layout>
-    </ChakraProvider>
-    // </SessionProvider>
+          )}
+        </Layout>
+      </ChakraProvider>
+    </SessionProvider>
   )
 }
 

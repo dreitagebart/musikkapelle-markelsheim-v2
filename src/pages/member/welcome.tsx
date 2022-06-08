@@ -11,7 +11,7 @@ const Page: NextPageExtended = () => {
   return (
     <Global title='Willkommen'>
       <Animate>
-        <PageHeader>Hallo {session?.user?.name}</PageHeader>
+        {/* <PageHeader>Hallo {session?.user?.name}</PageHeader> */}
       </Animate>
     </Global>
   )
