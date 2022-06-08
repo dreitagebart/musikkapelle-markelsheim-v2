@@ -10,13 +10,10 @@ import {
   FormControl,
   FormLabel,
   Heading,
-  HStack,
   Icon,
   Input,
   InputGroup,
   InputLeftElement,
-  LinkBox,
-  LinkOverlay,
   Text,
   Textarea
 } from '@chakra-ui/react'
@@ -28,7 +25,7 @@ import {
   FaUser
 } from 'react-icons/fa'
 
-import { Animate, Global } from '../components'
+import { Animate, Global, Ads } from '../components'
 import { NextPageExtended } from '../utils'
 
 interface ApiResponse {
@@ -358,25 +355,7 @@ const Page: NextPageExtended = () => {
           hier das Mitgliedsforumular herunterladen und ausgefüllt an uns zurück
           senden.
         </Alert>
-        <LinkBox display='inline-block'>
-          <LinkOverlay href='/pdf/mitgliedschaft.pdf'>
-            <HStack
-              padding='1rem'
-              borderRadius='8px'
-              borderWidth='1px'
-              borderColor='gray.200'
-              borderStyle='solid'
-            >
-              <Icon as={FaRegFilePdf} boxSize='2rem'></Icon>
-              <Box>
-                <b>Mitgliedschaft.pdf</b>
-                <Text fontSize='0.8rem'>
-                  Beitritterklärung für die Musikkapelle Markelsheim
-                </Text>
-              </Box>
-            </HStack>
-          </LinkOverlay>
-        </LinkBox>
+        <Ads></Ads>
       </Animate>
     </Global>
   )

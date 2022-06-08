@@ -1,4 +1,5 @@
 export * from './Auth'
+export * from './Ads'
 export * from './Menu'
 export * from './Global'
 export * from './Layout'

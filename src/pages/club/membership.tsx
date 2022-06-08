@@ -1,21 +1,13 @@
 import Link from 'next/link'
-import {
-  Box,
-  Divider,
-  HStack,
-  Icon,
-  LinkBox,
-  LinkOverlay,
-  Text
-} from '@chakra-ui/react'
-import { FaRegFilePdf } from 'react-icons/fa'
+import { Box, Divider, Text } from '@chakra-ui/react'
 
 import {
   Animate,
   Block,
   ClubSubMenu,
   Global,
-  PageHeader
+  PageHeader,
+  Ads
 } from '../../components'
 import { NextPageExtended } from '../../utils'
 
@@ -78,25 +70,7 @@ const Page: NextPageExtended = () => {
           <Link href='/contact'>unsere Ansprechpartner</Link> oder nutze das
           untenstehende Beitrittsformular zum Herunterladen.
         </Text>
-        <LinkBox display='inline-block'>
-          <LinkOverlay href='/pdf/mitgliedschaft.pdf'>
-            <HStack
-              padding='1rem'
-              borderRadius='8px'
-              borderWidth='1px'
-              borderColor='gray.200'
-              borderStyle='solid'
-            >
-              <Icon as={FaRegFilePdf} boxSize='2rem'></Icon>
-              <Box>
-                <b>Mitgliedschaft.pdf</b>
-                <Text fontSize='0.8rem'>
-                  Beitritterklärung für die Musikkapelle Markelsheim
-                </Text>
-              </Box>
-            </HStack>
-          </LinkOverlay>
-        </LinkBox>
+        <Ads></Ads>
       </Animate>
     </Global>
   )
