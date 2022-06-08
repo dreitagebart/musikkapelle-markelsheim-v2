@@ -2,16 +2,17 @@ import mailer, { SendMailOptions } from 'nodemailer'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import {
-  contactMessage,
-  confirmationMessage,
-  contactSubject,
-  confirmationSubject
+  rallyMessage,
+  rallyConfirmationMessage,
+  rallySubject,
+  rallyConfirmationSubject
 } from '../../assets/templates'
 
-const getContactMailData = (
+const getRallyMailData = (
   name: string,
-  phone: string,
   email: string,
+  noc: number,
+  takers: Array<string>,
   message: string
 ): SendMailOptions => ({
   from: {
@@ -21,12 +22,11 @@ const getContactMailData = (
   to: process.env.MAIL_TO,
   cc: process.env.MAIL_CC,
   replyTo: email,
-  subject: contactSubject({ name }),
-  html: contactMessage({ name, phone, email, message })
+  subject: rallySubject({ name }),
+  html: rallyMessage({ name, email, noc, takers, message })
 })
 
-const getConfirmationMailData = (
-  phone: string,
+const getRallyConfirmationMailData = (
   email: string,
   message: string
 ): SendMailOptions => ({
@@ -35,8 +35,8 @@ const getConfirmationMailData = (
     address: String(process.env.MAIL_FROM)
   },
   to: email,
-  subject: confirmationSubject(),
-  html: confirmationMessage({ phone, email, message })
+  subject: rallyConfirmationSubject(),
+  html: rallyConfirmationMessage({ email, message })
 })
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -49,13 +49,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
   })
 
-  const { name, phone, email, message } = req.body
+  const { name, email, noc, takers, message } = req.body
 
   transport
-    .sendMail(getContactMailData(name, phone, email, message))
+    .sendMail(getRallyMailData(name, email, noc, takers, message))
     .then(() => {
       transport
-        .sendMail(getConfirmationMailData(phone, email, message))
+        .sendMail(getRallyConfirmationMailData(email, message))
         .then(() => {
           return res.status(200).json({ error: false })
         })

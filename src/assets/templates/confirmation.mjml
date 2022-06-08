@@ -90,17 +90,17 @@
             text-padding="4px 20px 4px 0"
             name="web"
             href="https://www.musikkapelle-markelsheim.de"
-            >Homepage</mj-social-element
+            >musikkapelle-markelsheim.de</mj-social-element
           >
           <mj-social-element
             text-padding="4px 20px 4px 0"
-            name="facebook"
-            href="https://www.facebook.com/MusikkapelleMarkelsheim/"
+            name="facebook-noshare"
+            href="https://facebook.com/MusikkapelleMarkelsheim/"
             >Facebook</mj-social-element
           >
           <mj-social-element
             name="instagram"
-            href="https://weinbergblick-markelsheim.de"
+            href="https://instagram.com/musikkapelle_markelsheim"
           >
             Instagram
           </mj-social-element>

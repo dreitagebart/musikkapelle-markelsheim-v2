@@ -19,7 +19,6 @@ const getContactMailData = (
     address: String(process.env.MAIL_FROM)
   },
   to: process.env.MAIL_TO,
-  cc: process.env.MAIL_CC,
   replyTo: email,
   subject: contactSubject({ name }),
   html: contactMessage({ name, phone, email, message })

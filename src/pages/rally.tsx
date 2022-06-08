@@ -25,10 +25,12 @@ import {
   FaPlus,
   FaMinus,
   FaPeopleArrows,
-  FaUserPlus
+  FaUserPlus,
+  FaBullseye,
+  FaBullhorn
 } from 'react-icons/fa'
 
-import { Animate, Global } from '../components'
+import { Animate, Global, PageHeader } from '../components'
 import { NextPageExtended } from '../utils'
 
 interface ApiResponse {
@@ -102,8 +104,6 @@ const Page: NextPageExtended = () => {
 
     const { name, email, noc, takers, message } = form
 
-    // if (!message) formErrors.message = 'Bitte gebe eine Nachricht an'
-
     if (!email)
       formErrors.email = 'Wir benötigen deine eMail Adresse zur Kontaktaufnahme'
 
@@ -146,26 +146,33 @@ const Page: NextPageExtended = () => {
   }
 
   return (
-    <Global title='Anmeldung Instrumentenrally'>
+    <Global title='Rally'>
       <Animate>
-        <Heading variant='mb' size='md'>
-          Anmeldung zur &laquo;Instrumentenrally&raquo;
-          <br /> am Samstag, den 23.07.2022
-          <br />
-          um 10 Uhr in der Grundschule Markelsheim
-        </Heading>
-        <Alert status='info' maxWidth='860px'>
-          <AlertIcon></AlertIcon>
-          <Box>
-            <AlertTitle>Hinweis</AlertTitle>
-            <AlertDescription>
-              Sollten Sie kurzfristig nicht an der
-              &laquo;Instrumentenrally&raquo; teilnehmen können, so melden Sie
-              sich bitte per eMail über <b>info@musikkapelle-markelsheim.de</b>{' '}
-              ab!
-            </AlertDescription>
-          </Box>
+        <PageHeader>Anmeldung</PageHeader>
+        <Alert
+          status='info'
+          // colorScheme='red'
+          borderRadius='8px'
+          variant='subtle'
+          flexDirection='column'
+          alignItems='center'
+          justifyContent='center'
+          textAlign='center'
+          maxWidth='860px'
+        >
+          <AlertIcon boxSize='84px' mr={0} as={FaBullhorn} />
+          <AlertTitle mt={4} mb={1} fontSize='lg'>
+            &laquo;Instrumentenrally&raquo;
+          </AlertTitle>
+          <AlertDescription maxWidth='sm'>
+            am Samstag, den 23.07.2022
+            <br />
+            um 10:00 Uhr
+            <br />
+            in der Grundschule Markelsheim
+          </AlertDescription>
         </Alert>
+        <Heading variant='mb' size='md'></Heading>
         {form.status === 'success' && (
           <Alert status='success' my={4} variant='left-accent'>
             <AlertIcon></AlertIcon>
@@ -266,62 +273,27 @@ const Page: NextPageExtended = () => {
                 Anzahl Teilnehmer
               </FormLabel>
               <InputGroup>
-                {/* <InputLeftElement>
-                  <Icon as={FaPhone}></Icon>
-                </InputLeftElement> */}
                 <HStack>
                   <IconButton
                     {...dec}
-                    // onClick={() => {
-                    // const takers = [...form.takers]
-                    // takers.pop()
-                    // setForm({ ...form, takers })
-                    // }}
                     aria-label='Teilnehmeranzahl mindern'
                     icon={<Icon as={FaMinus}></Icon>}
-                    // isDisabled={form.noc === 1}
                   ></IconButton>
-                  <Input {...input} isReadOnly></Input>
+                  <Input
+                    {...input}
+                    isReadOnly
+                    focusBorderColor='brand.light'
+                    background='white'
+                    width='60px'
+                    textAlign='center'
+                    maxLength={2}
+                  ></Input>
                   <IconButton
                     {...inc}
-                    // onClick={() => {
-                    //   setForm({ ...form, takers: [...form.takers, ''] })
-                    // }}
                     aria-label='Teilnehmeranzahl erhöhen'
                     icon={<Icon as={FaPlus}></Icon>}
                   ></IconButton>
                 </HStack>
-                {/* <NumberInput
-                  isDisabled={form.status === 'loading'}
-                  defaultValue={form.noc}
-                  min={1}
-                  max={10}
-                  focusBorderColor='brand.light'
-                  background='white'
-                  id='rally-noc'
-                  name='noc'
-                  value={form.noc}
-                  onChange={(valueAsString, valueAsNumber) =>
-                    setForm({ ...form, noc: valueAsNumber })
-                  }
-                >
-                  <NumberInputField />
-                  <NumberInputStepper>
-                    <NumberIncrementStepper />
-                    <NumberDecrementStepper />
-                  </NumberInputStepper>
-                </NumberInput> */}
-
-                {/* <Input
-                  isDisabled={form.status === 'loading'}
-                  focusBorderColor='brand.light'
-                  background='white'
-                  id='contact-phone'
-                  name='phone'
-                  type='tel'
-                  value={form.phone}
-                  onChange={handleFormChange}
-                ></Input> */}
               </InputGroup>
             </FormControl>
             {form.takers.map((taker, index) => {
@@ -333,7 +305,7 @@ const Page: NextPageExtended = () => {
                     </InputLeftElement>
                     <Input
                       isDisabled={form.status === 'loading'}
-                      placeholder={`Teilnehmer ${index + 1}`}
+                      placeholder={`Name Teilnehmer ${index + 1}`}
                       focusBorderColor='brand.light'
                       background='white'
                       value={taker}
@@ -351,7 +323,7 @@ const Page: NextPageExtended = () => {
                 cursor='pointer'
                 htmlFor='contact-message'
               >
-                Nachricht
+                Gibt es etwas, was Sie uns noch mitteilen möchten?
               </FormLabel>
               <Alert
                 paddingY='0.3rem'
@@ -376,6 +348,22 @@ const Page: NextPageExtended = () => {
               ></Textarea>
             </FormControl>
             <FormControl>
+              <Alert
+                borderRadius='8px'
+                colorScheme='orange'
+                marginBottom='1rem'
+              >
+                <AlertIcon></AlertIcon>
+                <Box>
+                  <AlertTitle>Hinweis</AlertTitle>
+                  <AlertDescription>
+                    Sollten Sie kurzfristig nicht an der
+                    &laquo;Instrumentenrally&raquo; teilnehmen können, so melden
+                    Sie sich bitte per eMail über{' '}
+                    <b>info@musikkapelle-markelsheim.de</b> ab!
+                  </AlertDescription>
+                </Box>
+              </Alert>
               <Button
                 type='submit'
                 colorScheme='red'

@@ -1,16 +1,14 @@
 import mjml from 'mjml'
 
 interface MessageProps {
-  phone: string
   email: string
   message: string
 }
 
-export const confirmationSubject = (): string =>
-  `Ihre Nachricht an die Musikkapelle Markelsheim`
+export const rallyConfirmationSubject = (): string =>
+  `Anmeldung zur Instrumentenrally - Musikkapelle Markelsheim`
 
-export const confirmationMessage = ({
-  phone,
+export const rallyConfirmationMessage = ({
   email,
   message
 }: MessageProps): string => {
@@ -34,48 +32,20 @@ export const confirmationMessage = ({
     <mj-section background-color="#ffffff">
       <mj-column>
         <mj-text font-size="22px" color="#1A202C" font-family="arial"
-          >Ihre Nachricht an die Musikkapelle Markelsheim</mj-text
+          >Ihre Anmeldung zur Instrumentenrally</mj-text
         >
         <mj-text font-size="16px" color="#1A202C" font-family="arial"
-          >Vielen Dank für Ihre Nachricht! Es sind uns folgende Informationen
-          eingegangen:
+          >Hiermit bestätigen wir Ihnen den Eingang der Anmeldung. Die
+          Instrumentenrally findet am Samstag, 23.07.2022 um 10:00 Uhr in der
+          Grundschule Markelsheim statt.
         </mj-text>
-        <mj-text
-          padding-bottom="0"
-          font-size="16px"
-          color="#1A202C"
-          font-family="arial"
-          font-weight="bold"
-          >Ihre eMail Adresse
-        </mj-text>
-        <mj-text font-size="16px" color="#1A202C" font-style="italic"
-          >${email}</mj-text
+        <mj-text font-size="16px" color="#1A202C" font-family="arial">
+          Sollten Sie kurzfristig nicht an der Instrumentenralley teilnehmen
+          können, so melden Sie sich bitte per E-Mail über
+          info@musikkapelle-markelsheim.de ab!</mj-text
         >
-        <mj-text
-          padding-bottom="0"
-          font-size="16px"
-          color="#1A202C"
-          font-family="arial"
-          font-weight="bold"
-          >Ihre Telefonnummer
-        </mj-text>
-        <mj-text font-size="16px" color="#1A202C" font-style="italic"
-          >${phone || 'keine Angabe'}</mj-text
-        >
-        <mj-text
-          padding-bottom="0"
-          font-size="16px"
-          color="#1A202C"
-          font-family="arial"
-          font-weight="bold"
-          >Ihre Nachricht
-        </mj-text>
-        <mj-text font-size="16px" color="#1A202C" font-style="italic"
-          >${message}</mj-text
-        >
-        <mj-text font-size="16px" color="#1A202C" font-family="arial"
-          >Wir bestätigen Ihnen den Eingang dieser eMail und werden uns so früh
-          wie möglich bei Ihnen melden.</mj-text
+        <mj-text font-size="16px" color="#1A202C" font-family="arial">
+          Wir freuen uns auf Ihr Kommen!</mj-text
         >
       </mj-column>
     </mj-section>
@@ -96,7 +66,7 @@ export const confirmationMessage = ({
     </mj-section>
     <mj-section padding-top="0" padding-bottom="20px">
       <mj-column>
-          <mj-social
+        <mj-social
           align="left"
           font-size="15px"
           icon-size="30px"
@@ -120,9 +90,10 @@ export const confirmationMessage = ({
           >
             Instagram
           </mj-social-element>
-        </mj-social>       
+        </mj-social>
       </mj-column>
     </mj-section>
   </mj-body>
-</mjml>`).html
+</mjml>
+`).html
 }
