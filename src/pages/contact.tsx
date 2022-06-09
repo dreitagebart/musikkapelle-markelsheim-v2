@@ -352,7 +352,7 @@ const Page: NextPageExtended = () => {
         >
           <AlertIcon></AlertIcon>
           Sie möchten Mitglied in unserer Musikkapelle werden? Dann können Sie
-          hier das Mitgliedsforumular herunterladen und ausgefüllt an uns zurück
+          hier das Mitgliedsformular herunterladen und ausgefüllt an uns zurück
           senden.
         </Alert>
         <Ads></Ads>
