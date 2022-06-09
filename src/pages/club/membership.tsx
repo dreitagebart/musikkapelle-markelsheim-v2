@@ -26,7 +26,7 @@ const Page: NextPageExtended = () => {
           Mitglieder - egal welches Instrument. Natürlich kannst du auch
           jederzeit mal unverbindlich in den Proben reinschnuppern.
         </Block>
-        <Block>
+        {/* <Block>
           Du spielst noch kein Instrument, aber du möchtest gerne eines
           erlernen? Hier gibt es in unserem Verein auch viele Möglichkeiten!!
           Sprich uns einfach an!
@@ -34,7 +34,7 @@ const Page: NextPageExtended = () => {
         <Block>
           Wende dich am besten an unsere Vorsitzende{' '}
           <Link href='/contact'>Verena Hüttl</Link>.
-        </Block>
+        </Block> */}
         <Block>Wir freuen uns auf dich!</Block>
         <PageHeader>Passive Mitgliedschaft</PageHeader>
         <Block>
@@ -66,8 +66,8 @@ const Page: NextPageExtended = () => {
         </Box>
         <Divider></Divider>
         <Text variant='block'>
-          Für eine passive Mitgliedschaft wende dich einfach an{' '}
-          <Link href='/contact'>unsere Ansprechpartner</Link> oder nutze das
+          Für eine passive Mitgliedschaft wenden Sie sich einfach an{' '}
+          <Link href='/contact'>unsere Ansprechpartner</Link> oder nutzen das
           untenstehende Beitrittsformular zum Herunterladen.
         </Text>
         <Ads></Ads>

@@ -8,6 +8,10 @@ const colors = {
   }
 }
 
+const shadows = {
+  outline: '0 0 0 3px #e4553a'
+}
+
 const fonts = {
   heading: '"Montserrat Light", sans-serif',
   body: '"Nunito Sans", sans-serif'
@@ -204,4 +208,4 @@ const styles = {
   }
 }
 
-export const theme = extendTheme({ colors, fonts, components, styles })
+export const theme = extendTheme({ colors, fonts, components, styles, shadows })

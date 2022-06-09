@@ -151,7 +151,6 @@ const Page: NextPageExtended = () => {
         <PageHeader>Anmeldung</PageHeader>
         <Alert
           status='info'
-          // colorScheme='red'
           borderRadius='8px'
           variant='subtle'
           flexDirection='column'
@@ -321,7 +320,7 @@ const Page: NextPageExtended = () => {
               <FormLabel
                 paddingLeft='.5rem'
                 cursor='pointer'
-                htmlFor='contact-message'
+                htmlFor='rally-message'
               >
                 Gibt es etwas, was Sie uns noch mitteilen möchten?
               </FormLabel>
@@ -341,7 +340,7 @@ const Page: NextPageExtended = () => {
                 isInvalid={!!errors.message}
                 focusBorderColor='brand.light'
                 background='white'
-                id='contact-message'
+                id='rally-message'
                 name='message'
                 value={form.message}
                 onChange={handleFormChange}

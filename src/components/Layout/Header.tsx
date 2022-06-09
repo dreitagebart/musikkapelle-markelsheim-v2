@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Box } from '@chakra-ui/react'
+import { Box, Show } from '@chakra-ui/react'
 
 import leafLeft from '../../assets/images/leaves_left.png'
 import leafRight from '../../assets/images/leaves_right.png'
@@ -13,27 +13,21 @@ interface Props {}
 export const Header: React.FC<Props> = () => {
   return (
     <>
-      <Box
-        position='absolute'
-        top={0}
-        left={0}
-        display={['none', 'none', 'block']}
-      >
-        <Image src={leafLeft} alt=''></Image>
-      </Box>
-      <Box
-        position='absolute'
-        top={0}
-        right={0}
-        display={['none', 'none', 'block']}
-      >
-        <Image src={leafRight} alt=''></Image>
-      </Box>
+      <Show above='lg'>
+        <Box position='absolute' top={0} left={0}>
+          <Image src={leafLeft} alt=''></Image>
+        </Box>
+      </Show>
+      <Show above='lg'>
+        <Box position='absolute' top={0} right={0}>
+          <Image src={leafRight} alt=''></Image>
+        </Box>
+      </Show>
       <Box
         as='header'
         bgGradient='linear(to-b, #dfdfdf, #fff)'
         display='flex'
-        width='100vw'
+        width='100%'
         flexDirection='column'
         alignItems='center'
         justifyContent='center'
@@ -45,7 +39,6 @@ export const Header: React.FC<Props> = () => {
             </a>
           </Link>
         </Box>
-
         <MainMenu></MainMenu>
       </Box>
     </>

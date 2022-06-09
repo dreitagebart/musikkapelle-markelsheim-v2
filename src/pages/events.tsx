@@ -49,12 +49,12 @@ const Page: NextPageExtended<
               borderStyle='solid'
               borderColor='gray.200'
               borderRadius='8px'
-              padding='1rem'
-              background='gray.50'
+              padding='2rem'
+              boxShadow='lg'
             >
               <Text fontSize='0.9rem'>
                 <Heading size='md'>{event?.title}</Heading>
-                {moment(event?.add_info?.datum).format('DD.MM.YYYY')} -
+                {moment(event?.add_info?.datum).format('DD.MM.YYYY')} -&nbsp;
                 {event?.add_info?.uhrzeit} Uhr
               </Text>
               <Text>{event?.add_info?.ort}</Text>

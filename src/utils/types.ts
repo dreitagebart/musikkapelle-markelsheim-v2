@@ -8,3 +8,8 @@ export type NextPageExtended<P = {}, IP = P> = NextPage<P, IP> & {
 export type AppPropsExtended = AppProps & {
   Component: NextPageExtended
 }
+
+export type PageSubMenu = {
+  path: string
+  title: string
+}

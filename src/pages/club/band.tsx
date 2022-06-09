@@ -73,7 +73,6 @@ const Page: NextPageExtended = () => {
                 Querflöte
               </Heading>
               <List>
-                <ListItem>Carla Bauer</ListItem>
                 <ListItem>Jule Haas</ListItem>
                 <ListItem>Sonja Hainke</ListItem>
                 <ListItem>Jelena Kuhn</ListItem>
