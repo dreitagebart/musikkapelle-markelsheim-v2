@@ -290,8 +290,8 @@ const Page: NextPageExtended = () => {
           Geld spenden &amp; Bankverbindung
         </Heading>
         <Text>
-          Mit einer Geldspende kannst du unser Vereinsleben fördern und den Kauf
-          von Noten und Musikinstrumenten unterstützen.
+          Mit einer Geldspende können Sie unser Vereinsleben fördern und den
+          Kauf von Noten und Musikinstrumenten unterstützen.
         </Text>
         <Text>
           Wir sagen schon einmal im Voraus: <b>VIELEN DANK!</b>
@@ -351,7 +351,7 @@ const Page: NextPageExtended = () => {
           maxWidth='800px'
         >
           <AlertIcon></AlertIcon>
-          Du möchtest Mitglied in unserer Musikkapelle werden? Dann kannst du
+          Sie möchten Mitglied in unserer Musikkapelle werden? Dann können Sie
           hier das Mitgliedsforumular herunterladen und ausgefüllt an uns zurück
           senden.
         </Alert>
