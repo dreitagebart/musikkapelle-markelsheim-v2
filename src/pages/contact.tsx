@@ -126,7 +126,7 @@ const Page: NextPageExtended = () => {
           <Heading size='sm'>97980 Markelsheim</Heading>
         </Box>
         <Text marginTop='2rem'>
-          Wenn du mit uns Kontakt aufnehmen möchtest, dann verwende doch bitte
+          Wenn Sie mit uns Kontakt aufnehmen möchten, dann verwenden Sie bitte
           untenstehendes Kontaktformular.
         </Text>
         {form.status === 'success' && (

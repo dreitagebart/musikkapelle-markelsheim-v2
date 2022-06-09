@@ -1,5 +1,5 @@
 overwrite: true
-schema: 'http://musikkapelle-markelsheim.de/blog/graphql'
+schema: 'http://wp.musikkapelle-markelsheim.de/graphql'
 documents: 'src/lib/graphql/**/*.graphql'
 generates:
   src/lib/graphql/types.ts:

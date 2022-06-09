@@ -6151,7 +6151,7 @@
           },
           {
             "name": "commentOn",
-            "description": "The ID of the post object the comment belongs to.",
+            "description": "The database ID of the post object the comment belongs to.",
             "type": {
               "kind": "SCALAR",
               "name": "Int",
@@ -6187,7 +6187,7 @@
           },
           {
             "name": "parent",
-            "description": "Parent comment of current comment.",
+            "description": "Parent comment ID of current comment.",
             "type": {
               "kind": "SCALAR",
               "name": "ID",
@@ -6531,7 +6531,7 @@
           },
           {
             "name": "parentId",
-            "description": "The WordPress post ID or the graphQL postId of the parent object",
+            "description": "The ID of the parent object",
             "type": {
               "kind": "SCALAR",
               "name": "ID",
@@ -13687,6 +13687,18 @@
             "deprecationReason": null
           },
           {
+            "name": "uri",
+            "description": "The uri of the resource the menu item links to",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "url",
             "description": "URL or destination of the menu item.",
             "args": [],
@@ -18797,6 +18809,59 @@
         "possibleTypes": null
       },
       {
+        "kind": "ENUM",
+        "name": "PluginStatusEnum",
+        "description": "The status of the WordPress plugin.",
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "ACTIVE",
+            "description": "The plugin is currently active.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "DROP_IN",
+            "description": "The plugin is a drop-in plugin.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "INACTIVE",
+            "description": "The plugin is currently inactive.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "MUST_USE",
+            "description": "The plugin is a must-use plugin.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "PAUSED",
+            "description": "The plugin is technically active but was paused while loading.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "RECENTLY_ACTIVE",
+            "description": "The plugin was active recently.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "UPGRADE",
+            "description": "The plugin has an upgrade available.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
         "kind": "OBJECT",
         "name": "Post",
         "description": "The post type",
@@ -21626,13 +21691,13 @@
         "enumValues": [
           {
             "name": "RAW",
-            "description": "Provide the field value directly from database",
+            "description": "Provide the field value directly from database. Null on unauthenticated requests.",
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
             "name": "RENDERED",
-            "description": "Apply the default WordPress rendering",
+            "description": "Provide the field value as rendered by WordPress. Default.",
             "isDeprecated": false,
             "deprecationReason": null
           }
@@ -21951,6 +22016,12 @@
           {
             "name": "REQUEST_PENDING",
             "description": "Objects with the request-pending status",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "SPAM",
+            "description": "Objects with the spam status",
             "isDeprecated": false,
             "deprecationReason": null
           },
@@ -28055,6 +28126,18 @@
                 "defaultValue": null,
                 "isDeprecated": false,
                 "deprecationReason": null
+              },
+              {
+                "name": "where",
+                "description": "Arguments for filtering the connection",
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "RootQueryToPluginConnectionWhereArgs",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
               }
             ],
             "type": {
@@ -32902,6 +32985,57 @@
         ],
         "inputFields": null,
         "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "RootQueryToPluginConnectionWhereArgs",
+        "description": "Arguments for filtering the RootQueryToPluginConnection connection",
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "search",
+            "description": "Show plugin based on a keyword search.",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "stati",
+            "description": "Retrieve plugins where plugin status is in an array.",
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "PluginStatusEnum",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "status",
+            "description": "Show plugins with a specific status.",
+            "type": {
+              "kind": "ENUM",
+              "name": "PluginStatusEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "interfaces": null,
         "enumValues": null,
         "possibleTypes": null
       },
@@ -38499,7 +38633,7 @@
           },
           {
             "name": "commentOn",
-            "description": "The ID of the post object the comment belongs to.",
+            "description": "The database ID of the post object the comment belongs to.",
             "type": {
               "kind": "SCALAR",
               "name": "Int",
@@ -38551,7 +38685,7 @@
           },
           {
             "name": "parent",
-            "description": "Parent comment of current comment.",
+            "description": "Parent comment ID of current comment.",
             "type": {
               "kind": "SCALAR",
               "name": "ID",
@@ -38927,7 +39061,7 @@
           },
           {
             "name": "parentId",
-            "description": "The WordPress post ID or the graphQL postId of the parent object",
+            "description": "The ID of the parent object",
             "type": {
               "kind": "SCALAR",
               "name": "ID",
