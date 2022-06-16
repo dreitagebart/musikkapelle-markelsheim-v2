@@ -44,7 +44,9 @@ function mkm_custom_post_type() {
 }
 
 function mkm_custom_login_logo() {
-  echo '<style type="text/css"> h1 a {  background-image: url("https://musikkapelle-markelsheim.de/images/logo.png") !important; }</style>';
+  echo '<style type="text/css">
+        #login h1 a { width: 100%; height: 180px; background-size: contain; background-image: url("https://musikkapelle-markelsheim.de/images/logo.png") !important; }
+        </style>';
 }
 
 add_action('login_head', 'mkm_custom_login_logo');
