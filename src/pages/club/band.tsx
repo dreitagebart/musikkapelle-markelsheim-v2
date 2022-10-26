@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react'
 import Image from 'next/image'
 
-import groupImage from '../../assets/images/mkm01.jpeg'
+import groupImage from '../../assets/images/MK26.jpg'
 import { Animate, ClubSubMenu, Global } from '../../components'
 import { NextPageExtended } from '../../utils'
 

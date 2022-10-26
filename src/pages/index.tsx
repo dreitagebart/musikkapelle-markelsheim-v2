@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaArrowRight, FaChevronRight } from 'react-icons/fa'
 
-import band from '../assets/images/mkm02.jpeg'
+import band from '../assets/images/MK26.jpg'
 import { Global, PageHeader } from '../components'
 import { NextPageExtended } from '../utils'
 

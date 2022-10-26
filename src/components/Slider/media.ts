@@ -1,3 +1,6 @@
+import slidenew1 from '../../assets/images/MK26.jpg'
+import slidenew2 from '../../assets/images/MK16.jpg'
+import slidenew3 from '../../assets/images/MK011.jpg'
 import slide1 from '../../assets/images/mkm01.jpeg'
 import slide2 from '../../assets/images/mkm02.jpeg'
 import slide3 from '../../assets/images/mkm03.jpeg'
@@ -22,6 +25,9 @@ interface Image {
 }
 
 const media: Array<Image> = [
+  { image: slidenew1, description: '2022 Weinberg' },
+  { image: slidenew2, description: '2022 Weinberg' },
+  { image: slidenew3, description: '2022 Weinberg' },
   { image: slide1, description: '2019 Weinberg' },
   { image: slide2, description: '2019 Weinberg' },
   { image: slide3, description: '2019 Weinberg' },
