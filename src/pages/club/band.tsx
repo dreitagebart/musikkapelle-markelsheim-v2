@@ -1,5 +1,6 @@
 import {
   Box,
+  Center,
   Heading,
   List,
   ListItem,
@@ -9,7 +10,7 @@ import {
 } from '@chakra-ui/react'
 import Image from 'next/image'
 
-import groupImage from '../../assets/images/MK26.jpg'
+import groupImage from '../../assets/images/mkm2022_01.jpg'
 import { Animate, ClubSubMenu, Global } from '../../components'
 import { NextPageExtended } from '../../utils'
 
@@ -18,7 +19,7 @@ const Page: NextPageExtended = () => {
     <Global title='Musikkapelle'>
       <ClubSubMenu></ClubSubMenu>
       <Animate>
-        <Box my='1rem'>
+        <Center my='1rem'>
           <Image
             className='band-logo'
             placeholder='blur'
@@ -26,7 +27,7 @@ const Page: NextPageExtended = () => {
             src={groupImage}
             alt='Gruppenbild auf dem Weinberg Markelsheim'
           />
-        </Box>
+        </Center>
         <VStack spacing='2rem'>
           <Box
             display='flex'
