@@ -11,9 +11,9 @@ import {
   useDisclosure,
   VStack
 } from '@chakra-ui/react'
+import { FaBars, FaTimes } from 'react-icons/fa'
 
 import { MainMenuLink } from './Links'
-import { FaBars, FaTimes, FaUserAlt } from 'react-icons/fa'
 // import { useSession } from 'next-auth/react'
 
 interface Props {}

@@ -19,6 +19,7 @@ export const FooterMenu: React.FC<Props> = () => {
       <FooterMenuLink href='/club/membership'>Mitglied werden</FooterMenuLink>
       <FooterMenuLink href='/contact'>Kontakt</FooterMenuLink>
       <FooterMenuLink href='/impressum'>Impressum</FooterMenuLink>
+      <FooterMenuLink href='/sponsors'>Sponsoren</FooterMenuLink>
       {/* {session ? (
         <FooterMenuLink
           href='/'
