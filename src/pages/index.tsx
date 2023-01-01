@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaArrowRight } from 'react-icons/fa'
 
+import jahreskonzert from '../assets/images/ads/jahreskonzert.jpg'
 import band from '../assets/images/mkm2022_01.jpg'
 import { Global, PageHeader } from '../components'
 import { NextPageExtended } from '../utils'
@@ -78,6 +79,7 @@ const Page: NextPageExtended = () => {
             </Text>
           </Box>
         </HStack>
+        <Image src={jahreskonzert} alt='Jahreskonzert 2023'></Image>
       </Box>
     </Global>
   )
