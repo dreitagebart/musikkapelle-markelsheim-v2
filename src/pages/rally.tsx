@@ -164,7 +164,7 @@ const Page: NextPageExtended = () => {
             &laquo;Instrumentenrally&raquo;
           </AlertTitle>
           <AlertDescription maxWidth='sm'>
-            am Samstag, den 23.07.2022
+            am Samstag, den 22.04.2023
             <br />
             um 10:00 Uhr
             <br />
