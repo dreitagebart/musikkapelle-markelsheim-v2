@@ -79,7 +79,6 @@ const Page: NextPageExtended = () => {
             </Text>
           </Box>
         </HStack>
-<!--         <Image src={jahreskonzert} alt='Jahreskonzert 2023'></Image> -->
       </Box>
     </Global>
   )
