@@ -19,7 +19,7 @@ const Page: NextPageExtended = () => {
         <Heading size='md' variant='my' mb='20px'>
           Danke an alle Sponsoren, die unsere Vereinsarbeit unterstützen!
         </Heading>
-        <SimpleGrid minChildWidth='400px' spacing='20px' mb='40px'>
+        <SimpleGrid minChildWidth={['300px', '400px']} spacing='20px' mb='40px'>
           <Sponsor
             label='Bokmeier Erd & Tiefbau'
             image={betb}

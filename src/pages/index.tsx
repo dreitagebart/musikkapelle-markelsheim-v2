@@ -1,4 +1,12 @@
-import { Box, Button, Heading, HStack, Icon, Text } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  Heading,
+  HStack,
+  Icon,
+  Stack,
+  Text
+} from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaArrowRight } from 'react-icons/fa'
@@ -23,10 +31,13 @@ const Page: NextPageExtended = () => {
           alt='Gruppenbild der Musikkapelle'
           className='band-logo'
         ></Image>
-        <HStack
-          width='100%'
-          padding='2rem'
-          spacing='4rem'
+        <Stack
+          direction={['column', 'row']}
+          // width='100%'
+          // padding='2rem'
+          mt='2rem'
+          // mb='2rem'
+          spacing='2rem'
           alignItems='flex-start'
         >
           <Box
@@ -48,7 +59,7 @@ const Page: NextPageExtended = () => {
             <Text>
               <Link href='/club/about' passHref>
                 <Button rightIcon={<Icon as={FaArrowRight}></Icon>}>
-                  Erfahre mehr über unseren Verein
+                  Mehr über den Verein
                 </Button>
               </Link>
             </Text>
@@ -73,12 +84,38 @@ const Page: NextPageExtended = () => {
             <Text>
               <Link href='/events' passHref>
                 <Button rightIcon={<Icon as={FaArrowRight}></Icon>}>
-                  Hier sehen Sie unsere aktuellen Termine
+                  Aktuelle Termine
                 </Button>
               </Link>
             </Text>
           </Box>
-        </HStack>
+          <Box
+            width='100%'
+            padding='2rem'
+            borderRadius='8px'
+            boxShadow='lg'
+            borderWidth='1px'
+            borderStyle='solid'
+            borderColor='gray.200'
+          >
+            <Heading size='md' variant='mb'>
+              Instrumentenrally
+            </Heading>
+            <Text variant='block'>
+              Du siehst dich als Nachwuchsmusiker von morgen und möchtest ein
+              Instrument bei uns erlernen? Für alle Interessenten bieten wir
+              eine &laquo;Instrumentenrally&raquo; am <b>22.04.2023</b> in der
+              Grundschule in Markelsheim.
+            </Text>
+            <Text>
+              <Link href='/rally' passHref>
+                <Button rightIcon={<Icon as={FaArrowRight}></Icon>}>
+                  Zum Anmeldeformular
+                </Button>
+              </Link>
+            </Text>
+          </Box>
+        </Stack>
       </Box>
     </Global>
   )
