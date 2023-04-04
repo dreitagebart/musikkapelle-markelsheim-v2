@@ -99,16 +99,16 @@ const Page: NextPageExtended = () => {
             borderColor='gray.200'
           >
             <Heading size='md' variant='mb'>
-              Instrumentenrally
+              Instrumentenrallye
             </Heading>
             <Text variant='block'>
               Du siehst dich als Nachwuchsmusiker von morgen und möchtest ein
               Instrument bei uns erlernen? Für alle Interessenten bieten wir
-              eine &laquo;Instrumentenrally&raquo; am <b>22.04.2023</b> in der
+              eine &laquo;Instrumentenrallye&raquo; am <b>22.04.2023</b> in der
               Grundschule in Markelsheim.
             </Text>
             <Text>
-              <Link href='/rally' passHref>
+              <Link href='/rallye' passHref>
                 <Button rightIcon={<Icon as={FaArrowRight}></Icon>}>
                   Zum Anmeldeformular
                 </Button>

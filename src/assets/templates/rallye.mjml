@@ -9,7 +9,7 @@
     <mj-section background-color="#f6f9fc" padding-bottom="0">
       <mj-column>
         <mj-text font-size="24px" color="#1A202C" font-family="arial"
-          >Anmeldung zur Instrumentenrally</mj-text
+          >Anmeldung zur Instrumentenrallye</mj-text
         >
       </mj-column>
     </mj-section>

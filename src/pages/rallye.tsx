@@ -116,7 +116,7 @@ const Page: NextPageExtended = () => {
     }
 
     Axios.post<{}, AxiosResponse<ApiResponse>, Omit<FormState, 'status'>>(
-      '/api/rally',
+      '/api/rallye',
       {
         name,
         email,
@@ -146,7 +146,7 @@ const Page: NextPageExtended = () => {
   }
 
   return (
-    <Global title='Rally'>
+    <Global title='Rallye'>
       <Animate>
         <PageHeader>Anmeldung</PageHeader>
         <Alert
@@ -161,7 +161,7 @@ const Page: NextPageExtended = () => {
         >
           <AlertIcon boxSize='84px' mr={0} as={FaBullhorn} />
           <AlertTitle mt={4} mb={1} fontSize='lg'>
-            &laquo;Instrumentenrally&raquo;
+            &laquo;Instrumentenrallye&raquo;
           </AlertTitle>
           <AlertDescription maxWidth='sm'>
             am Samstag, den 22.04.2023
@@ -196,7 +196,7 @@ const Page: NextPageExtended = () => {
               <FormLabel
                 paddingLeft='.5rem'
                 cursor='pointer'
-                htmlFor='rally-name'
+                htmlFor='rallye-name'
               >
                 Vor- und Zuname Elternteil
               </FormLabel>
@@ -220,7 +220,7 @@ const Page: NextPageExtended = () => {
                   isInvalid={!!errors.name}
                   focusBorderColor='brand.light'
                   background='white'
-                  id='rally-name'
+                  id='rallye-name'
                   name='name'
                   value={form.name}
                   onChange={handleFormChange}
@@ -231,7 +231,7 @@ const Page: NextPageExtended = () => {
               <FormLabel
                 paddingLeft='.5rem'
                 cursor='pointer'
-                htmlFor='rally-email'
+                htmlFor='rallye-email'
               >
                 eMail Adresse
               </FormLabel>
@@ -255,7 +255,7 @@ const Page: NextPageExtended = () => {
                   isInvalid={!!errors.email}
                   focusBorderColor='brand.light'
                   background='white'
-                  id='rally-email'
+                  id='rallye-email'
                   name='email'
                   type='email'
                   value={form.email}
@@ -267,7 +267,7 @@ const Page: NextPageExtended = () => {
               <FormLabel
                 paddingLeft='.5rem'
                 cursor='pointer'
-                htmlFor='rally-noc'
+                htmlFor='rallye-noc'
               >
                 Anzahl Teilnehmer
               </FormLabel>
@@ -320,7 +320,7 @@ const Page: NextPageExtended = () => {
               <FormLabel
                 paddingLeft='.5rem'
                 cursor='pointer'
-                htmlFor='rally-message'
+                htmlFor='rallye-message'
               >
                 Gibt es etwas, was Sie uns noch mitteilen möchten?
               </FormLabel>
@@ -340,7 +340,7 @@ const Page: NextPageExtended = () => {
                 isInvalid={!!errors.message}
                 focusBorderColor='brand.light'
                 background='white'
-                id='rally-message'
+                id='rallye-message'
                 name='message'
                 value={form.message}
                 onChange={handleFormChange}
@@ -357,8 +357,8 @@ const Page: NextPageExtended = () => {
                   <AlertTitle>Hinweis</AlertTitle>
                   <AlertDescription>
                     Sollten Sie kurzfristig nicht an der
-                    &laquo;Instrumentenrally&raquo; teilnehmen können, so melden
-                    Sie sich bitte per eMail über{' '}
+                    &laquo;Instrumentenrallye&raquo; teilnehmen können, so
+                    melden Sie sich bitte per eMail über{' '}
                     <b>info@musikkapelle-markelsheim.de</b> ab!
                   </AlertDescription>
                 </Box>

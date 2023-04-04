@@ -30,13 +30,13 @@ const Page: NextPageExtended = () => {
         <Block>
           Damit sich interessierte Nachwuchsmusiker von morgen in unser
           Vereinsleben einfinden können, bieten wir dieses Jahr am{' '}
-          <b>Samstag, den 22.04.2023</b> eine &laquo;Instrumentenrally&raquo; in
-          der Grundschule Markelsheim an.
+          <b>Samstag, den 22.04.2023</b> eine &laquo;Instrumentenrallye&raquo;
+          in der Grundschule Markelsheim an.
         </Block>
         <Block>
-          <Link href='/rally' passHref>
+          <Link href='/rallye' passHref>
             <Button variant='solid' colorScheme='red'>
-              Anmeldeformular zur Instrumentenrally
+              Anmeldeformular zur Instrumentenrallye
             </Button>
           </Link>
         </Block>

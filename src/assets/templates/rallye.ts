@@ -12,10 +12,10 @@ interface MessageProps {
   message: string
 }
 
-export const rallySubject = ({ name }: SubjectProps): string =>
-  `Musikkapelle Markelsheim - Instrumentenrally ${name}`
+export const rallyeSubject = ({ name }: SubjectProps): string =>
+  `Musikkapelle Markelsheim - Instrumentenrallye ${name}`
 
-export const rallyMessage = ({
+export const rallyeMessage = ({
   name,
   email,
   noc,
@@ -33,7 +33,7 @@ export const rallyMessage = ({
     <mj-section background-color="#f6f9fc" padding-bottom="0">
       <mj-column>
         <mj-text font-size="24px" color="#1A202C" font-family="arial"
-          >Anmeldung zur Instrumentenrally</mj-text
+          >Anmeldung zur Instrumentenrallye</mj-text
         >
       </mj-column>
     </mj-section>

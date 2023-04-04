@@ -5,10 +5,10 @@ interface MessageProps {
   message: string
 }
 
-export const rallyConfirmationSubject = (): string =>
-  `Anmeldung zur Instrumentenrally - Musikkapelle Markelsheim`
+export const rallyeConfirmationSubject = (): string =>
+  `Anmeldung zur Instrumentenrallye - Musikkapelle Markelsheim`
 
-export const rallyConfirmationMessage = ({
+export const rallyeConfirmationMessage = ({
   email,
   message
 }: MessageProps): string => {
@@ -32,15 +32,15 @@ export const rallyConfirmationMessage = ({
     <mj-section background-color="#ffffff">
       <mj-column>
         <mj-text font-size="22px" color="#1A202C" font-family="arial"
-          >Ihre Anmeldung zur Instrumentenrally</mj-text
+          >Ihre Anmeldung zur Instrumentenrallye</mj-text
         >
         <mj-text font-size="16px" color="#1A202C" font-family="arial"
           >Hiermit bestätigen wir Ihnen den Eingang der Anmeldung. Die
-          Instrumentenrally findet am Samstag, 22.04.2023 um 10:00 Uhr in der
+          Instrumentenrallye findet am Samstag, 22.04.2023 um 10:00 Uhr in der
           Grundschule Markelsheim statt.
         </mj-text>
         <mj-text font-size="16px" color="#1A202C" font-family="arial">
-          Sollten Sie kurzfristig nicht an der Instrumentenrally teilnehmen
+          Sollten Sie kurzfristig nicht an der Instrumentenrallye teilnehmen
           können, so melden Sie sich bitte per E-Mail über
           info@musikkapelle-markelsheim.de ab!</mj-text
         >

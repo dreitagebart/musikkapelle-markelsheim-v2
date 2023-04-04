@@ -1,4 +1,4 @@
 export * from './contact'
 export * from './confirmation'
-export * from './rally'
-export * from './rally-confirmation'
+export * from './rallye'
+export * from './rallye-confirmation'
