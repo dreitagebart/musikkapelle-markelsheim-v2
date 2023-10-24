@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Center,
   Heading,
   HStack,
   Icon,
@@ -11,7 +12,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaArrowRight } from 'react-icons/fa'
 
-import jahreskonzert from '../assets/images/ads/jahreskonzert.jpg'
+import promenadenkonzert from '../assets/images/ads/promenadenkonzert.jpeg'
 import band from '../assets/images/mkm2022_01.jpg'
 import { Global, PageHeader } from '../components'
 import { NextPageExtended } from '../utils'
@@ -90,6 +91,9 @@ const Page: NextPageExtended = () => {
             </Text>
           </Box>
         </Stack>
+        <Center mt={10}>
+          <Image src={promenadenkonzert} alt='Promenadenkonzert'></Image>
+        </Center>
       </Box>
     </Global>
   )

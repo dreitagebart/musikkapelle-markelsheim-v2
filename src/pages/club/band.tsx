@@ -79,6 +79,7 @@ const Page: NextPageExtended = () => {
                 <ListItem>Sonja Hainke</ListItem>
                 <ListItem>Jelena Kuhn</ListItem>
                 <ListItem>Kristin Peyerl</ListItem>
+                <ListItem>Doreen Pütz</ListItem>
               </List>
             </Box>
             <Box textAlign='center'>
@@ -108,6 +109,7 @@ const Page: NextPageExtended = () => {
                 Flügelhorn
               </Heading>
               <List>
+                <ListItem>Tobias Borst</ListItem>
                 <ListItem>Tobias Haas</ListItem>
                 <ListItem>David Hartmann</ListItem>
                 <ListItem>Benedikt Mika</ListItem>
