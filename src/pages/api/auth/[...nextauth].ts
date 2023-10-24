@@ -50,20 +50,20 @@ export default NextAuth({
       console.log('email', email)
       console.log('credentials', credentials)
 
-      if (userlist.hasOwnProperty(account.provider)) {
-        const provider = account.provider as keyof typeof userlist
-        const mail = user.email
+      // if (userlist.hasOwnProperty(account.provider)) {
+      //   const provider = account.provider as keyof typeof userlist
+      //   const mail = user.email
 
-        if (!mail) {
-          return '/member/noauth'
-        }
+      //   if (!mail) {
+      //     return '/member/noauth'
+      //   }
 
-        if (userlist[provider].includes(mail)) {
-          return true
-        }
+      //   if (userlist[provider].includes(mail)) {
+      //     return true
+      //   }
 
-        return '/member/noauth'
-      }
+      //   return '/member/noauth'
+      // }
 
       return '/member/noauth'
     }
