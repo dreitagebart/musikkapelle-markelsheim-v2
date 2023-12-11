@@ -6,59 +6,59 @@ import {
   HStack,
   Icon,
   Stack,
-  Text
-} from '@chakra-ui/react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { FaArrowRight } from 'react-icons/fa'
+  Text,
+} from "@chakra-ui/react";
+import Image from "next/image";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 
-import promenadenkonzert from '../assets/images/ads/promenadenkonzert.jpeg'
-import band from '../assets/images/mkm2022_01.jpg'
-import { Global, PageHeader } from '../components'
-import { NextPageExtended } from '../utils'
+// import promenadenkonzert from "../assets/images/ads/promenadenkonzert.jpeg";
+import band from "../assets/images/2023_weinberg.jpg";
+import { Global, PageHeader } from "../components";
+import { NextPageExtended } from "../utils";
 
 const Page: NextPageExtended = () => {
   return (
     <Global>
       <Box
-        display='flex'
-        flexDirection='column'
-        alignItems='center'
-        justifyContent='center'
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
       >
         <PageHeader>Herzlich Willkommen!</PageHeader>
         <Image
           src={band}
-          alt='Gruppenbild der Musikkapelle'
-          className='band-logo'
+          alt="Gruppenbild der Musikkapelle"
+          className="band-logo"
         ></Image>
         <Stack
-          direction={['column', 'row']}
+          direction={["column", "row"]}
           // width='100%'
           // padding='2rem'
-          mt='2rem'
+          mt="2rem"
           // mb='2rem'
-          spacing='2rem'
-          alignItems='flex-start'
+          spacing="2rem"
+          alignItems="flex-start"
         >
           <Box
-            width='100%'
-            borderWidth='1px'
-            borderStyle='solid'
-            borderColor='gray.200'
-            padding='2rem'
-            borderRadius='8px'
-            boxShadow='lg'
+            width="100%"
+            borderWidth="1px"
+            borderStyle="solid"
+            borderColor="gray.200"
+            padding="2rem"
+            borderRadius="8px"
+            boxShadow="lg"
           >
-            <Heading size='md' variant='mb'>
+            <Heading size="md" variant="mb">
               Unser Verein
             </Heading>
-            <Text variant='block'>
+            <Text variant="block">
               Wir sind die Musikkapelle Markelsheim e. V. und zählen aktuell
               rund 40 aktive Musikerinnen und Musiker.
             </Text>
             <Text>
-              <Link href='/club/about' passHref>
+              <Link href="/club/about" passHref>
                 <Button rightIcon={<Icon as={FaArrowRight}></Icon>}>
                   Mehr über den Verein
                 </Button>
@@ -66,24 +66,24 @@ const Page: NextPageExtended = () => {
             </Text>
           </Box>
           <Box
-            width='100%'
-            padding='2rem'
-            borderRadius='8px'
-            boxShadow='lg'
-            borderWidth='1px'
-            borderStyle='solid'
-            borderColor='gray.200'
+            width="100%"
+            padding="2rem"
+            borderRadius="8px"
+            boxShadow="lg"
+            borderWidth="1px"
+            borderStyle="solid"
+            borderColor="gray.200"
           >
-            <Heading size='md' variant='mb'>
+            <Heading size="md" variant="mb">
               Unser Musikprogramm
             </Heading>
-            <Text variant='block'>
+            <Text variant="block">
               Wir lieben die traditionelle und konzertante Blasmusik, spielen
               aber auch gerne alles vom Musical bis hin zur Operette. Haben Sie
               Lust uns live zu hören?
             </Text>
             <Text>
-              <Link href='/events' passHref>
+              <Link href="/events" passHref>
                 <Button rightIcon={<Icon as={FaArrowRight}></Icon>}>
                   Aktuelle Termine
                 </Button>
@@ -91,14 +91,14 @@ const Page: NextPageExtended = () => {
             </Text>
           </Box>
         </Stack>
-        <Center mt={10}>
-          <Image src={promenadenkonzert} alt='Promenadenkonzert'></Image>
-        </Center>
+        {/* <Center mt={10}>
+          <Image src={promenadenkonzert} alt="Promenadenkonzert"></Image>
+        </Center> */}
       </Box>
     </Global>
-  )
-}
+  );
+};
 
-Page.auth = false
+Page.auth = false;
 
-export default Page
+export default Page;

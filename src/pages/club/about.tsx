@@ -1,27 +1,27 @@
-import { Box } from '@chakra-ui/react'
+import { Box } from "@chakra-ui/react";
 
 import {
   Animate,
   Block,
   ClubSubMenu,
   Global,
-  PageHeader
-} from '../../components'
-import { NextPageExtended } from '../../utils'
+  PageHeader,
+} from "../../components";
+import { NextPageExtended } from "../../utils";
 
 const Page: NextPageExtended = () => {
   return (
-    <Global title='Über uns'>
+    <Global title="Über uns">
       <ClubSubMenu></ClubSubMenu>
       <Animate>
         <PageHeader>Etwas über uns</PageHeader>
         <Box
-          display='inline-block'
-          background='gray.100'
-          padding='1rem'
-          borderRadius='8px'
-          fontSize='1.2rem'
-          fontFamily='Montserrat'
+          display="inline-block"
+          background="gray.100"
+          padding="1rem"
+          borderRadius="8px"
+          fontSize="1.2rem"
+          fontFamily="Montserrat"
         >
           Unsere Musikkapelle zählt stolze 200 Mitglieder mit 40 aktiven
           Musikern.
@@ -34,7 +34,7 @@ const Page: NextPageExtended = () => {
         </Block>
         <Block>
           Die Proben finden jeden Mittwoch im Haus der Vereine in Markelsheim
-          statt. Von jeweils <strong>20:00</strong> bis{' '}
+          statt. Von jeweils <strong>20:00</strong> bis{" "}
           <strong>22:00 Uhr</strong> bereiten wir uns dort zum Beispiel auf die
           anstehenden Ständchen , Feste und Konzerte vor. Uns ist es wichtig
           neben den Noten aus dem Repertoire auch immer wieder neue Stücke mit
@@ -45,14 +45,14 @@ const Page: NextPageExtended = () => {
             Typisch für unsere Musikkapelle ist die konzertante Blasmusik
           </strong>
           . Abend-, Promenaden-, Fest- und vorweihnachtliche Konzerte stehen auf
-          unserem Programm. Den Höhepunkt für uns bildet jedes Jahr{' '}
-          <strong>das Weihnachtskonzert in Markelsheim</strong>.
+          unserem Programm. Den Höhepunkt für uns bildet jedes Jahr{" "}
+          <strong>das Jahreskonzert in Markelsheim</strong>.
         </Block>
       </Animate>
     </Global>
-  )
-}
+  );
+};
 
-Page.auth = false
+Page.auth = false;
 
-export default Page
+export default Page;
