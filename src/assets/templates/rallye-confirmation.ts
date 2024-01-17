@@ -36,7 +36,7 @@ export const rallyeConfirmationMessage = ({
         >
         <mj-text font-size="16px" color="#1A202C" font-family="arial"
           >Hiermit bestätigen wir Ihnen den Eingang der Anmeldung. Die
-          Instrumentenrallye findet am Samstag, 22.04.2023 um 10:00 Uhr in der
+          Instrumentenrallye findet am Samstag, 16.03.2024 um 10:00 Uhr in der
           Grundschule Markelsheim statt.
         </mj-text>
         <mj-text font-size="16px" color="#1A202C" font-family="arial">

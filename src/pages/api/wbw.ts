@@ -2,18 +2,19 @@ import mailer, { SendMailOptions } from 'nodemailer'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import {
-  rallyeMessage,
-  rallyeConfirmationMessage,
-  rallyeSubject,
-  rallyeConfirmationSubject
+  wbwMessage,
+  wbwConfirmationMessage,
+  wbwSubject,
+  wbwConfirmationSubject
 } from '../../assets/templates'
 
-const getRallyeMailData = (
+const getWBWMailData = (
   name: string,
   email: string,
   noc: number,
   takers: Array<string>,
-  message: string
+  message: string,
+  phone: string
 ): SendMailOptions => ({
   from: {
     name: 'Musikkapelle Markelsheim',
@@ -22,11 +23,11 @@ const getRallyeMailData = (
   to: process.env.MAIL_TO,
   cc: process.env.MAIL_CC,
   replyTo: email,
-  subject: rallyeSubject({ name }),
-  html: rallyeMessage({ name, email, noc, takers, message })
+  subject: wbwSubject({ name }),
+  html: wbwMessage({ name, email, noc, takers, message, phone })
 })
 
-const getRallyeConfirmationMailData = (
+const getWBWConfirmationMailData = (
   email: string,
   message: string
 ): SendMailOptions => ({
@@ -35,8 +36,8 @@ const getRallyeConfirmationMailData = (
     address: String(process.env.MAIL_FROM)
   },
   to: email,
-  subject: rallyeConfirmationSubject(),
-  html: rallyeConfirmationMessage({ email, message })
+  subject: wbwConfirmationSubject(),
+  html: wbwConfirmationMessage({ email, message })
 })
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -49,13 +50,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
   })
 
-  const { name, email, noc, takers, message } = req.body
+  const { name, email, noc, takers, message, phone } = req.body
 
   transport
-    .sendMail(getRallyeMailData(name, email, noc, takers, message))
+    .sendMail(getWBWMailData(name, email, noc, takers, message, phone))
     .then(() => {
       transport
-        .sendMail(getRallyeConfirmationMailData(email, message))
+        .sendMail(getWBWConfirmationMailData(email, message))
         .then(() => {
           return res.status(200).json({ error: false })
         })

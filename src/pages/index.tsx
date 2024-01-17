@@ -57,13 +57,25 @@ const Page: NextPageExtended = () => {
               Wir feiern 60 Jahre Musikkapelle Markelsheim! Erfahren Sie mehr
               über unsere Veranstaltungen im Jubiläumsjahr 2024.
             </Text>
-            <Text>
-              <a href='/pdf/veranstaltungen_jubiläumsjahr.pdf' target='_blank'>
-                <Button rightIcon={<Icon as={FaArrowRight}></Icon>}>
-                  PDF zum Jubiläumsjahr
-                </Button>
-              </a>
-            </Text>
+            <Stack direction={['column', 'row']} spacing='12px'>
+              <Text>
+                <a
+                  href='/pdf/veranstaltungen_jubiläumsjahr.pdf'
+                  target='_blank'
+                >
+                  <Button rightIcon={<Icon as={FaArrowRight}></Icon>}>
+                    PDF zum Jubiläumsjahr
+                  </Button>
+                </a>
+              </Text>
+              <Text>
+                <Link href='/weinbergwanderung' passHref>
+                  <Button rightIcon={<Icon as={FaArrowRight}></Icon>}>
+                    Anmeldung Schlürfen im 3/4 Takt
+                  </Button>
+                </Link>
+              </Text>
+            </Stack>
           </Box>
           <Box
             width='100%'
