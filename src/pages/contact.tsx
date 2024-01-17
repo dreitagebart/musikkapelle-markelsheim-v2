@@ -137,6 +137,14 @@ const Page: NextPageExtended = () => {
             </AlertTitle>
           </Alert>
         )}
+        {form.status === 'error' && (
+          <Alert status='error' my={4} variant='left-accent'>
+            <AlertIcon></AlertIcon>
+            <AlertTitle mr={2}>
+              Kontaktformular konnte nicht gesendet werden
+            </AlertTitle>
+          </Alert>
+        )}
         <Box
           marginTop='1rem'
           marginBottom='4rem'

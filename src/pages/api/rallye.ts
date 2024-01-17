@@ -51,7 +51,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const { name, email, noc, takers, message } = req.body
 
-  transport
+  return transport
     .sendMail(getRallyeMailData(name, email, noc, takers, message))
     .then(() => {
       transport

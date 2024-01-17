@@ -52,7 +52,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const { name, email, noc, takers, message, phone } = req.body
 
-  transport
+  return transport
     .sendMail(getWBWMailData(name, email, noc, takers, message, phone))
     .then(() => {
       transport

@@ -50,7 +50,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const { name, phone, email, message } = req.body
 
-  transport
+  return transport
     .sendMail(getContactMailData(name, phone, email, message))
     .then(() => {
       transport
