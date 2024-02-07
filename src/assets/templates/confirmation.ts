@@ -94,6 +94,35 @@ export const confirmationMessage = ({
         <mj-text font-size="14px">Besuchen Sie uns im Internet</mj-text>
       </mj-column>
     </mj-section>
+    <mj-section padding-top="0" padding-bottom="20px">
+      <mj-column>
+        <mj-social
+          align="left"
+          font-size="15px"
+          icon-size="30px"
+          mode="horizontal"
+        >
+          <mj-social-element
+            text-padding="4px 20px 4px 0"
+            name="web"
+            href="https://www.musikkapelle-markelsheim.de"
+            >musikkapelle-markelsheim.de</mj-social-element
+          >
+          <mj-social-element
+            text-padding="4px 20px 4px 0"
+            name="facebook-noshare"
+            href="https://facebook.com/MusikkapelleMarkelsheim/"
+            >Facebook</mj-social-element
+          >
+          <mj-social-element
+            name="instagram"
+            href="https://instagram.com/musikkapelle_markelsheim"
+          >
+            Instagram
+          </mj-social-element>
+        </mj-social>
+      </mj-column>
+    </mj-section>
   </mj-body>
 </mjml>`).html
 }
