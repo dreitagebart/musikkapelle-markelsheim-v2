@@ -26,12 +26,6 @@ export const wbwMessage = ({
 }: MessageProps): string => {
   return mjml(`<mjml>
   <mj-body background-color="#e9ecef">
-    <mj-section
-      padding-top="240px"
-      background-url="https://musikkapelle-markelsheim-v2.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.26f80dd5.png&w=256&q=75"
-      background-repeat="no-repeat"
-    >
-    </mj-section>
     <mj-section background-color="#f6f9fc" padding-bottom="0">
       <mj-column>
         <mj-text font-size="24px" color="#1A202C" font-family="arial"
