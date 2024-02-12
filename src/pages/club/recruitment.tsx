@@ -27,10 +27,10 @@ const Page: NextPageExtended = () => {
           Jugendorchester aufgebaut werden, um das gemeinsame Spielen zu fördern
           und die Freude an der Musik zu verstärken.
         </Block>
-        {/* <Block>
+        <Block>
           Damit sich interessierte Nachwuchsmusiker von morgen in unser
           Vereinsleben einfinden können, bieten wir dieses Jahr am{' '}
-          <b>Samstag, den 22.04.2023</b> eine &laquo;Instrumentenrallye&raquo;
+          <b>Samstag, den 16.03.2024</b> eine &laquo;Instrumentenrallye&raquo;
           in der Grundschule Markelsheim an.
         </Block>
         <Block>
@@ -39,7 +39,7 @@ const Page: NextPageExtended = () => {
               Anmeldeformular zur Instrumentenrallye
             </Button>
           </Link>
-        </Block> */}
+        </Block>
         <Block>
           Solltest du Interesse an einer Ausbildung haben, so wende dich bitte
           an unseren Vereinsvorstand <Link href='/contact'>Verena Hüttl</Link>.
