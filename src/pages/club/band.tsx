@@ -10,7 +10,8 @@ import {
 } from '@chakra-ui/react'
 import Image from 'next/image'
 
-import groupImage from '../../assets/images/mkm2022_01.jpg'
+import groupImage from '../../assets/images/2023_weinberg.jpg'
+// import groupImage from '../../assets/images/mkm2022_01.jpg'
 import { Animate, ClubSubMenu, Global } from '../../components'
 import { NextPageExtended } from '../../utils'
 
@@ -52,7 +53,7 @@ const Page: NextPageExtended = () => {
                 <ListItem>Isabell Balling</ListItem>
                 <ListItem>Corinna Burkert</ListItem>
                 <ListItem>Isabelle Herrmann</ListItem>
-                <ListItem>Tabea Halbmann</ListItem>
+                {/* <ListItem>Tabea Halbmann</ListItem> */}
                 <ListItem>Verena Hüttl</ListItem>
                 <ListItem>Alfred Kimmelmann</ListItem>
                 <ListItem>Karin Staudt</ListItem>
@@ -80,6 +81,7 @@ const Page: NextPageExtended = () => {
                 <ListItem>Jelena Kuhn</ListItem>
                 <ListItem>Kristin Peyerl</ListItem>
                 <ListItem>Doreen Pütz</ListItem>
+                <ListItem>Vera Ruck</ListItem>
               </List>
             </Box>
             <Box textAlign='center'>
@@ -99,7 +101,7 @@ const Page: NextPageExtended = () => {
               </Heading>
               <List>
                 <ListItem>Jens Gundling</ListItem>
-                <ListItem>Cordelia Halbmann</ListItem>
+                {/* <ListItem>Cordelia Halbmann</ListItem> */}
                 <ListItem>Jochen Popp</ListItem>
                 <ListItem>Rebeca Schulz</ListItem>
               </List>
@@ -112,6 +114,7 @@ const Page: NextPageExtended = () => {
                 <ListItem>Tobias Borst</ListItem>
                 <ListItem>Tobias Haas</ListItem>
                 <ListItem>David Hartmann</ListItem>
+                <ListItem>Clemens Leuchs</ListItem>
                 <ListItem>Benedikt Mika</ListItem>
                 <ListItem>Fred Prokosch</ListItem>
                 <ListItem>Anton Schneider</ListItem>
@@ -143,7 +146,6 @@ const Page: NextPageExtended = () => {
                 Bass
               </Heading>
               <List>
-                <ListItem>Xaver Halbmann</ListItem>
                 <ListItem>Alois Zöllinger</ListItem>
               </List>
             </Box>
@@ -153,7 +155,6 @@ const Page: NextPageExtended = () => {
               </Heading>
               <List>
                 <ListItem>Kai Kimmelmann</ListItem>
-                <ListItem>Sabine Strysak-Halbmann</ListItem>
               </List>
             </Box>
             <Box textAlign='center'>

@@ -378,7 +378,8 @@ const Page: NextPageExtended = () => {
                 cursor='pointer'
                 htmlFor='wbw-message'
               >
-                Gibt es etwas, was Sie uns noch mitteilen möchten?
+                Gibt es etwas, was Sie uns noch mitteilen möchten, wie
+                z.&nbsp;B. vegetarische oder alkoholfreie Verpflegung?
               </FormLabel>
               <Alert
                 paddingY='0.3rem'

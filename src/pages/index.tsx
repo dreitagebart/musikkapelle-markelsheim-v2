@@ -1,13 +1,4 @@
-import {
-  Box,
-  Button,
-  Center,
-  Heading,
-  HStack,
-  Icon,
-  Stack,
-  Text
-} from '@chakra-ui/react'
+import { Box, Button, Heading, Icon, Stack, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaArrowRight } from 'react-icons/fa'
