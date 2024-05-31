@@ -81,7 +81,7 @@ const Page: NextPageExtended = () => {
                 <ListItem>Jelena Kuhn</ListItem>
                 <ListItem>Kristin Peyerl</ListItem>
                 <ListItem>Doreen Pütz</ListItem>
-                <ListItem>Vera Ruck</ListItem>
+                <ListItem>Verena Ruck</ListItem>
               </List>
             </Box>
             <Box textAlign='center'>
