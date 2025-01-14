@@ -88,7 +88,7 @@ const Page: NextPageExtended = () => {
 							</Heading>
 							<List>
 								<ListItem>Hermann Beck</ListItem>
-								<ListItem>Stefan Büchold</ListItem>
+								{/* <ListItem>Stefan Büchold</ListItem> */}
 								<ListItem>Anton Kimmelmann</ListItem>
 								<ListItem>Wilfried Zeihsel</ListItem>
 							</List>
@@ -100,7 +100,7 @@ const Page: NextPageExtended = () => {
 							<List>
 								<ListItem>Jens Gundling</ListItem>
 								<ListItem>Jochen Popp</ListItem>
-								<ListItem>Rebeca Schulz</ListItem>
+								<ListItem>Walter Schulz</ListItem>
 							</List>
 						</Box>
 						<Box textAlign="center">
@@ -115,6 +115,7 @@ const Page: NextPageExtended = () => {
 								<ListItem>Benedikt Mika</ListItem>
 								<ListItem>Fred Prokosch</ListItem>
 								<ListItem>Anton Schneider</ListItem>
+								<ListItem>Rebeca Schulz</ListItem>
 							</List>
 						</Box>
 						<Box textAlign="center">
@@ -134,10 +135,16 @@ const Page: NextPageExtended = () => {
 							<List>
 								<ListItem>Lukas Halbmann</ListItem>
 								<ListItem>Bastian Hartmann</ListItem>
-								<ListItem>Philipp Hernadi</ListItem>
+								{/* <ListItem>Philipp Hernadi</ListItem> */}
 								<ListItem>Franz Schmidberger</ListItem>
 							</List>
 						</Box>
+					</SimpleGrid>
+					<SimpleGrid
+						columns={{ sm: 1, md: 3, lg: 3, xl: 3 }}
+						spacingX="4rem"
+						spacingY="2rem"
+					>
 						<Box textAlign="center">
 							<Heading size="md" variant="mb">
 								Bass
@@ -154,14 +161,14 @@ const Page: NextPageExtended = () => {
 								<ListItem>Kai Kimmelmann</ListItem>
 							</List>
 						</Box>
-						<Box textAlign="center">
+						{/* <Box textAlign="center">
 							<Heading size="md" variant="mb">
 								Fagott
 							</Heading>
 							<List>
 								<ListItem>Tizian Halbmann</ListItem>
 							</List>
-						</Box>
+						</Box> */}
 						<Box textAlign="center">
 							<Heading size="md" variant="mb">
 								Saxophon
