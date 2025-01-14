@@ -1,10 +1,18 @@
-import { Box, Button, Heading, Icon, Stack, Text } from "@chakra-ui/react";
+import {
+	Box,
+	Button,
+	Center,
+	Heading,
+	Icon,
+	Stack,
+	Text,
+} from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
-// import promenadenkonzert from "../assets/images/ads/promenadenkonzert.jpeg";
 import band from "../assets/images/2023_weinberg.jpg";
+import jahreskonzert from "../assets/images/jahreskonzert-2025.png";
 import { Global, PageHeader } from "../components";
 import { NextPageExtended } from "../utils";
 
@@ -32,7 +40,7 @@ const Page: NextPageExtended = () => {
 					spacing="2rem"
 					alignItems="flex-start"
 				>
-					<Box
+					{/* <Box
 						width="100%"
 						borderWidth="1px"
 						borderStyle="solid"
@@ -59,15 +67,8 @@ const Page: NextPageExtended = () => {
 									</Button>
 								</a>
 							</Text>
-							{/* <Text>
-                <Link href='/weinbergwanderung' passHref>
-                  <Button rightIcon={<Icon as={FaArrowRight}></Icon>}>
-                    Anmeldung Schlürfen im 3/4 Takt
-                  </Button>
-                </Link>
-              </Text> */}
 						</Stack>
-					</Box>
+					</Box> */}
 					<Box
 						width="100%"
 						borderWidth="1px"
@@ -118,9 +119,9 @@ const Page: NextPageExtended = () => {
 						</Text>
 					</Box>
 				</Stack>
-				{/* <Center mt={10}>
-          <Image src={promenadenkonzert} alt="Promenadenkonzert"></Image>
-        </Center> */}
+				<Center mt={10}>
+					<Image src={jahreskonzert} alt="Jahreskonzert 2025"></Image>
+				</Center>
 			</Box>
 		</Global>
 	);
