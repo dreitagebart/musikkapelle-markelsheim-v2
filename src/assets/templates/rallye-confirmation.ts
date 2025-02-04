@@ -1,18 +1,18 @@
-import mjml from 'mjml'
+import mjml from "mjml";
 
 interface MessageProps {
-  email: string
-  message: string
+	email: string;
+	message: string;
 }
 
 export const rallyeConfirmationSubject = (): string =>
-  `Anmeldung zur Instrumentenrallye - Musikkapelle Markelsheim`
+	`Anmeldung zur Instrumentenrallye - Musikkapelle Markelsheim`;
 
 export const rallyeConfirmationMessage = ({
-  email,
-  message
+	email,
+	message,
 }: MessageProps): string => {
-  return mjml(`<mjml>
+	return mjml(`<mjml>
   <mj-body background-color="#e9ecef">
     <mj-section background-color="#f6f9fc">
       <mj-column>
@@ -36,7 +36,7 @@ export const rallyeConfirmationMessage = ({
         >
         <mj-text font-size="16px" color="#1A202C" font-family="arial"
           >Hiermit bestätigen wir Ihnen den Eingang der Anmeldung. Die
-          Instrumentenrallye findet am Samstag, 16.03.2024 um 10:00 Uhr in der
+          Instrumentenrallye findet am Samstag, 15.03.2025 um 10:00 Uhr in der
           Grundschule Markelsheim statt.
         </mj-text>
         <mj-text font-size="16px" color="#1A202C" font-family="arial">
@@ -95,5 +95,5 @@ export const rallyeConfirmationMessage = ({
     </mj-section>
   </mj-body>
 </mjml>
-`).html
-}
+`).html;
+};
