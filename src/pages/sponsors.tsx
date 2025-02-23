@@ -10,6 +10,7 @@ import lochner from "../assets/images/sponsors/lochner.png";
 import mstu from "../assets/images/sponsors/moehler_sturban.png";
 import spkTbf from "../assets/images/sponsors/sparkasse_tauberfranken.jpg";
 import kuhn from "../assets/images/sponsors/tauberenergie_kuhn.png";
+import wittenstein from '../assets/images/sponsors/wittenstein.jpg'
 import { Animate, Global, PageHeader, Sponsor } from "../components";
 import { NextPageExtended } from "../utils";
 
@@ -66,6 +67,11 @@ const Page: NextPageExtended = () => {
 						label="Sparkasse Tauberfranken"
 						image={spkTbf}
 						link="https://www.sparkasse-tauberfranken.de"
+					></Sponsor>
+					<Sponsor
+						label="WITTENSTEIN"
+						image={wittenstein}
+						link="https://www.wittenstein.de"
 					></Sponsor>
 				</SimpleGrid>
 

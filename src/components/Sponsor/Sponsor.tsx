@@ -1,16 +1,17 @@
 import Image from 'next/image'
-import { Center, Tooltip } from '@chakra-ui/react'
-import { FC } from 'react'
+import { Center, Tooltip, CenterProps } from '@chakra-ui/react'
+import { CSSProperties, FC } from 'react'
 
-interface Props {
+interface Props extends CenterProps {
+  size?: CSSProperties['width']
   link: string
   label: string
   image: StaticImageData
 }
 
-export const Sponsor: FC<Props> = ({ image, label, link }) => {
+export const Sponsor: FC<Props> = ({ size = 'auto', image, label, link, ...props }) => {
   return (
-    <Center>
+    <Center style={{ width: size, height: 'auto' }} {...props}>
       <Tooltip label={label}>
         <a href={link} target='_blank' rel='noreferrer'>
           <Image src={image} alt={label}></Image>
