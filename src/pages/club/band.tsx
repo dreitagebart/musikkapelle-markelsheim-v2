@@ -55,6 +55,7 @@ const Page: NextPageExtended = () => {
 								<ListItem>Isabelle Herrmann</ListItem>
 								<ListItem>Verena Hüttl</ListItem>
 								<ListItem>Alfred Kimmelmann</ListItem>
+								<ListItem>Alexandra Mütsch</ListItem>
 								<ListItem>Karin Staudt</ListItem>
 								<ListItem>Simone Tatusch</ListItem>
 							</List>
@@ -66,8 +67,9 @@ const Page: NextPageExtended = () => {
 							<List>
 								<ListItem>Christoph Burkert</ListItem>
 								<ListItem>Lena Deppisch</ListItem>
+								<ListItem>Markus Limbrunner</ListItem>
 								{/* <ListItem>Fabian Gundling</ListItem> */}
-								<ListItem>David Hernadi</ListItem>
+								
 							</List>
 						</Box>
 						<Box textAlign="center">
@@ -80,6 +82,7 @@ const Page: NextPageExtended = () => {
 								<ListItem>Kristin Peyerl</ListItem>
 								<ListItem>Doreen Pütz</ListItem>
 								<ListItem>Verena Ruck</ListItem>
+								<ListItem>Clarissa Schönian</ListItem>
 							</List>
 						</Box>
 						<Box textAlign="center">
