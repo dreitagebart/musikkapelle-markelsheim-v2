@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import Image from 'next/image'
+import Image from "next/image"
 import useSlider from 'embla-carousel-react'
 import { Box, Heading } from '@chakra-ui/react'
 
@@ -54,11 +54,14 @@ export const Slider: React.FC<Props> = ({ slides }) => {
                 <Box className='slider__slide' key={index}>
                   <Box className='slider__slide__inner'>
                     <Image
-                      layout='responsive'
                       className='slider__slide__img'
                       src={media.image}
                       alt={media.description}
-                    ></Image>
+                      sizes="100vw"
+                      style={{
+                        width: "100%",
+                        height: "auto"
+                      }}></Image>
                     <Box
                       mt='1rem'
                       flexDirection='row'
@@ -70,7 +73,7 @@ export const Slider: React.FC<Props> = ({ slides }) => {
                     </Box>
                   </Box>
                 </Box>
-              )
+              );
             })}
           </Box>
         </Box>
@@ -87,5 +90,5 @@ export const Slider: React.FC<Props> = ({ slides }) => {
         </Box>
       </Box>
     </>
-  )
+  );
 }

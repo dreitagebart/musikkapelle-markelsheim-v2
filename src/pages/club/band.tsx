@@ -17,17 +17,20 @@ import { NextPageExtended } from "../../utils";
 
 const Page: NextPageExtended = () => {
 	return (
-		<Global title="Musikkapelle">
-			<ClubSubMenu></ClubSubMenu>
-			<Animate>
+        <Global title="Musikkapelle">
+            <ClubSubMenu></ClubSubMenu>
+            <Animate>
 				<Center my="1rem">
 					<Image
-						className="band-logo"
-						placeholder="blur"
-						quality={100}
-						src={groupImage}
-						alt="Gruppenbild auf dem Weinberg Markelsheim"
-					/>
+                        className="band-logo"
+                        placeholder="blur"
+                        quality={100}
+                        src={groupImage}
+                        alt="Gruppenbild auf dem Weinberg Markelsheim"
+                        style={{
+                            maxWidth: "100%",
+                            height: "auto"
+                        }} />
 				</Center>
 				<VStack spacing="2rem">
 					<Box
@@ -184,8 +187,8 @@ const Page: NextPageExtended = () => {
 					</SimpleGrid>
 				</VStack>
 			</Animate>
-		</Global>
-	);
+        </Global>
+    );
 };
 
 Page.auth = false;

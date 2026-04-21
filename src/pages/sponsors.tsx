@@ -16,8 +16,8 @@ import { NextPageExtended } from "../utils";
 
 const Page: NextPageExtended = () => {
 	return (
-		<Global title="Sponsoren">
-			<Animate>
+        <Global title="Sponsoren">
+            <Animate>
 				<PageHeader>Unsere Sponsoren</PageHeader>
 				<Heading size="md" variant="my" mb="20px">
 					Danke an alle Sponsoren, die unsere Vereinsarbeit unterstützen!
@@ -75,7 +75,7 @@ const Page: NextPageExtended = () => {
 					></Sponsor>
 				</SimpleGrid>
 
-				<Link href="/contact" passHref>
+				<Link href="/contact">
 					<Alert
 						cursor="pointer"
 						status="info"
@@ -92,8 +92,8 @@ const Page: NextPageExtended = () => {
 					</Alert>
 				</Link>
 			</Animate>
-		</Global>
-	);
+        </Global>
+    );
 };
 
 Page.auth = false;

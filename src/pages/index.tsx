@@ -30,8 +30,8 @@ import { NextPageExtended } from "../utils";
 
 const Page: NextPageExtended = () => {
 	return (
-		<Global>
-			<Box
+        <Global>
+            <Box
 				display="flex"
 				flexDirection="column"
 				alignItems="center"
@@ -39,10 +39,13 @@ const Page: NextPageExtended = () => {
 			>
 				<PageHeader>Herzlich Willkommen!</PageHeader>
 				<Image
-					src={band}
-					alt="Gruppenbild der Musikkapelle"
-					className="band-logo"
-				></Image>
+                    src={band}
+                    alt="Gruppenbild der Musikkapelle"
+                    className="band-logo"
+                    style={{
+                        maxWidth: "100%",
+                        height: "auto"
+                    }}></Image>
 				<Stack
 					direction={["column", "row"]}
 					// width='100%'
@@ -98,7 +101,7 @@ const Page: NextPageExtended = () => {
 							rund 40 aktive Musikerinnen und Musiker.
 						</Text>
 						<Text>
-							<Link href="/club/about" passHref>
+							<Link href="/club/about">
 								<Button rightIcon={<Icon as={FaArrowRight}></Icon>}>
 									Mehr über den Verein
 								</Button>
@@ -123,7 +126,7 @@ const Page: NextPageExtended = () => {
 							Lust uns live zu hören?
 						</Text>
 						<Text>
-							<Link href="/events" passHref>
+							<Link href="/events">
 								<Button rightIcon={<Icon as={FaArrowRight}></Icon>}>
 									Aktuelle Termine
 								</Button>
@@ -220,8 +223,8 @@ const Page: NextPageExtended = () => {
 				{/* <Image src={jahreskonzert} alt="Jahreskonzert 2025"></Image> */}
 				{/* </Center> */}
 			</Box>
-		</Global >
-	);
+        </Global >
+    );
 };
 
 Page.auth = false;

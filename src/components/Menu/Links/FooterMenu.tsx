@@ -13,18 +13,18 @@ export const FooterMenuLink: React.FC<Props> = ({
   onClick
 }) => {
   return (
-    <Link href={href} passHref>
-      <a onClick={onClick}>
-        <Box
-          borderRadius='4px'
-          paddingY='0.4rem'
-          paddingX='0.8rem'
-          transition='all 300ms ease-in'
-          _hover={{ backgroundColor: '#efefef', color: '#333' }}
-        >
-          {children}
-        </Box>
-      </a>
+    <Link href={href} onClick={onClick}>
+
+      <Box
+        borderRadius='4px'
+        paddingY='0.4rem'
+        paddingX='0.8rem'
+        transition='all 300ms ease-in'
+        _hover={{ backgroundColor: '#efefef', color: '#333' }}
+      >
+        {children}
+      </Box>
+
     </Link>
-  )
+  );
 }
