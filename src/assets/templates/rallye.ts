@@ -15,14 +15,14 @@ interface MessageProps {
 export const rallyeSubject = ({ name }: SubjectProps): string =>
   `Musikkapelle Markelsheim - Instrumentenrallye ${name}`
 
-export const rallyeMessage = ({
+export const rallyeMessage = async ({
   name,
   email,
   noc,
   takers,
   message
-}: MessageProps): string => {
-  return mjml(`<mjml>
+}: MessageProps) => {
+  const result = await mjml(`<mjml>
   <mj-body background-color="#e9ecef">
     <mj-section background-color="#f6f9fc" padding-bottom="0">
       <mj-column>
@@ -68,5 +68,7 @@ export const rallyeMessage = ({
       </mj-column>
     </mj-section>
   </mj-body>
-</mjml>`).html
+</mjml>`)
+
+return result.html
 }

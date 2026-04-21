@@ -8,11 +8,11 @@ interface MessageProps {
 export const wbwConfirmationSubject = (): string =>
   `Anmeldung zur Weinbergwanderung - Musikkapelle Markelsheim`
 
-export const wbwConfirmationMessage = ({
+export const wbwConfirmationMessage = async ({
   email,
   message
-}: MessageProps): string => {
-  return mjml(`<mjml>
+}: MessageProps) => {
+  const result = await mjml(`<mjml>
   <mj-body background-color="#e9ecef">
     <mj-section background-color="#f6f9fc">
       <mj-column>
@@ -94,5 +94,7 @@ export const wbwConfirmationMessage = ({
       </mj-column>
     </mj-section>
   </mj-body>
-</mjml>`).html
+</mjml>`)
+
+return result.html
 }

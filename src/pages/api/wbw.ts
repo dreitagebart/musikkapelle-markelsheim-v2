@@ -8,14 +8,14 @@ import {
   wbwConfirmationSubject
 } from '../../assets/templates'
 
-const getWBWMailData = (
+const getWBWMailData = async(
   name: string,
   email: string,
   noc: number,
   takers: Array<string>,
   message: string,
   phone: string
-): SendMailOptions => ({
+): Promise<SendMailOptions> => ({
   from: {
     name: 'Musikkapelle Markelsheim',
     address: String(process.env.MAIL_FROM)
@@ -24,20 +24,20 @@ const getWBWMailData = (
   cc: process.env.MAIL_CC,
   replyTo: email,
   subject: wbwSubject({ name }),
-  html: wbwMessage({ name, email, noc, takers, message, phone })
+  html: await wbwMessage({ name, email, noc, takers, message, phone }) as string
 })
 
-const getWBWConfirmationMailData = (
+const getWBWConfirmationMailData = async(
   email: string,
   message: string
-): SendMailOptions => ({
+): Promise<SendMailOptions> => ({
   from: {
     name: 'Musikkapelle Markelsheim',
     address: String(process.env.MAIL_FROM)
   },
   to: email,
   subject: wbwConfirmationSubject(),
-  html: wbwConfirmationMessage({ email, message })
+  html: await wbwConfirmationMessage({ email, message })
 })
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -53,10 +53,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { name, email, noc, takers, message, phone } = req.body
 
   return transport
-    .sendMail(getWBWMailData(name, email, noc, takers, message, phone))
-    .then(() => {
+    .sendMail(await getWBWMailData(name, email, noc, takers, message, phone))
+    .then(async() => {
       transport
-        .sendMail(getWBWConfirmationMailData(email, message))
+        .sendMail(await getWBWConfirmationMailData(email, message))
         .then(() => {
           return res.status(200).json({ error: false })
         })

@@ -16,15 +16,15 @@ interface MessageProps {
 export const wbwSubject = ({ name }: SubjectProps): string =>
   `Musikkapelle Markelsheim - Weinbergwanderung ${name}`
 
-export const wbwMessage = ({
+export const wbwMessage = async({
   name,
   email,
   noc,
   phone,
   takers,
   message
-}: MessageProps): string => {
-  return mjml(`<mjml>
+}: MessageProps) => {
+  const result = await mjml(`<mjml>
   <mj-body background-color="#e9ecef">
     <mj-section background-color="#f6f9fc" padding-bottom="0">
       <mj-column>
@@ -72,5 +72,7 @@ export const wbwMessage = ({
       </mj-column>
     </mj-section>
   </mj-body>
-</mjml>`).html
+</mjml>`)
+
+return result.html
 }

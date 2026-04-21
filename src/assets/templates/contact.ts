@@ -14,13 +14,13 @@ interface MessageProps {
 export const contactSubject = ({ name }: SubjectProps): string =>
   `Musikkapelle Markelsheim - Neue Nachricht von ${name}`
 
-export const contactMessage = ({
+export const contactMessage = async ({
   name,
   email,
   phone,
   message
-}: MessageProps): string => {
-  return mjml(`<mjml>
+}: MessageProps) => {
+  const result = await mjml(`<mjml>
   <mj-body background-color="#e9ecef">
     <mj-section background-color="#f6f9fc" padding-bottom="0">
       <mj-column>
@@ -48,5 +48,7 @@ export const contactMessage = ({
       </mj-column>
     </mj-section>
   </mj-body>
-</mjml>`).html
+</mjml>`)
+
+return result.html
 }

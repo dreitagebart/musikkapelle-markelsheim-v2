@@ -8,13 +8,13 @@ import {
   rallyeConfirmationSubject
 } from '../../assets/templates'
 
-const getRallyeMailData = (
+const getRallyeMailData = async (
   name: string,
   email: string,
   noc: number,
   takers: Array<string>,
   message: string
-): SendMailOptions => ({
+): Promise<SendMailOptions> => ({
   from: {
     name: 'Musikkapelle Markelsheim',
     address: String(process.env.MAIL_FROM)
@@ -23,20 +23,20 @@ const getRallyeMailData = (
   cc: process.env.MAIL_CC,
   replyTo: email,
   subject: rallyeSubject({ name }),
-  html: rallyeMessage({ name, email, noc, takers, message })
+  html: await rallyeMessage({ name, email, noc, takers, message })
 })
 
-const getRallyeConfirmationMailData = (
+const getRallyeConfirmationMailData = async(
   email: string,
   message: string
-): SendMailOptions => ({
+): Promise<SendMailOptions> => ({
   from: {
     name: 'Musikkapelle Markelsheim',
     address: String(process.env.MAIL_FROM)
   },
   to: email,
   subject: rallyeConfirmationSubject(),
-  html: rallyeConfirmationMessage({ email, message })
+  html: await rallyeConfirmationMessage({ email, message })
 })
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -52,10 +52,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { name, email, noc, takers, message } = req.body
 
   return transport
-    .sendMail(getRallyeMailData(name, email, noc, takers, message))
-    .then(() => {
+    .sendMail(await getRallyeMailData(name, email, noc, takers, message))
+    .then(async() => {
       transport
-        .sendMail(getRallyeConfirmationMailData(email, message))
+        .sendMail(await getRallyeConfirmationMailData(email, message))
         .then(() => {
           return res.status(200).json({ error: false })
         })

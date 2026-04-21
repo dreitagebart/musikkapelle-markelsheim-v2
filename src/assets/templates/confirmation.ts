@@ -9,12 +9,12 @@ interface MessageProps {
 export const confirmationSubject = (): string =>
   `Ihre Nachricht an die Musikkapelle Markelsheim`
 
-export const confirmationMessage = ({
+export const confirmationMessage = async ({
   phone,
   email,
   message
-}: MessageProps): string => {
-  return mjml(`<mjml>
+}: MessageProps) => {
+  const result = await mjml(`<mjml>
   <mj-body background-color="#e9ecef">
     <mj-section background-color="#f6f9fc">
       <mj-column>
@@ -124,5 +124,7 @@ export const confirmationMessage = ({
       </mj-column>
     </mj-section>
   </mj-body>
-</mjml>`).html
+</mjml>`)
+
+return result.html
 }

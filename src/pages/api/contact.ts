@@ -8,12 +8,12 @@ import {
   confirmationSubject
 } from '../../assets/templates'
 
-const getContactMailData = (
+const getContactMailData = async (
   name: string,
   phone: string,
   email: string,
   message: string
-): SendMailOptions => ({
+): Promise<SendMailOptions> => ({
   from: {
     name: 'Musikkapelle Markelsheim',
     address: String(process.env.MAIL_FROM)
@@ -21,21 +21,21 @@ const getContactMailData = (
   to: process.env.MAIL_TO,
   replyTo: email,
   subject: contactSubject({ name }),
-  html: contactMessage({ name, phone, email, message })
+  html: await contactMessage({ name, phone, email, message })
 })
 
-const getConfirmationMailData = (
+const getConfirmationMailData = async (
   phone: string,
   email: string,
   message: string
-): SendMailOptions => ({
+): Promise<SendMailOptions> => ({
   from: {
     name: 'Musikkapelle Markelsheim',
     address: String(process.env.MAIL_FROM)
   },
   to: email,
   subject: confirmationSubject(),
-  html: confirmationMessage({ phone, email, message })
+  html: await confirmationMessage({ phone, email, message })
 })
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -50,22 +50,16 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const { name, phone, email, message } = req.body
 
-  return transport
-    .sendMail(getContactMailData(name, phone, email, message))
-    .then(() => {
-      transport
-        .sendMail(getConfirmationMailData(phone, email, message))
-        .then(() => {
-          return res.status(200).json({ error: false })
-        })
-        .catch((error) => {
-          console.log(error)
+  try {
+    await transport.sendMail(await getContactMailData(name, phone, email, message))
+    await transport.sendMail(await getConfirmationMailData(phone, email, message))
 
-          return res.status(400).json({
-            error: true
-          })
-        })
-    })
+    return res.status(200).json({ error: false })
+  } catch (error) {
+    console.log(error)
+
+    return res.status(400).json({ error: true })
+  }
 }
 
 export default handler
