@@ -65,11 +65,12 @@ const Page: NextPageExtended = () => {
 								Schlagwerk
 							</Heading>
 							<List>
-								<ListItem>Christoph Burkert</ListItem>
 								<ListItem>Lena Deppisch</ListItem>
 								<ListItem>Markus Limbrunner</ListItem>
+								<ListItem>Fabian Scherer</ListItem>
+								<ListItem>Jannick Tatusch</ListItem>
 								{/* <ListItem>Fabian Gundling</ListItem> */}
-								
+
 							</List>
 						</Box>
 						<Box textAlign="center">
@@ -91,9 +92,10 @@ const Page: NextPageExtended = () => {
 							</Heading>
 							<List>
 								<ListItem>Hermann Beck</ListItem>
+								<ListItem>Fabian Halbmann</ListItem>
 								<ListItem>Malte Harpf</ListItem>
-								{/* <ListItem>Stefan Büchold</ListItem> */}
 								<ListItem>Anton Kimmelmann</ListItem>
+								<ListItem>Lino Ruck</ListItem>
 								<ListItem>Wilfried Zeihsel</ListItem>
 							</List>
 						</Box>
@@ -127,6 +129,7 @@ const Page: NextPageExtended = () => {
 								Bariton
 							</Heading>
 							<List>
+								<ListItem>Jakob Glöckner</ListItem>
 								<ListItem>Florian Metzger</ListItem>
 								<ListItem>Eugen Porasil</ListItem>
 								<ListItem>Anton Rupp</ListItem>

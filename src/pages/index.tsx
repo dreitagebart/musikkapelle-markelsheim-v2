@@ -5,7 +5,6 @@ import {
 	Flex,
 	Heading,
 	Icon,
-	SimpleGrid,
 	Stack,
 	Text,
 } from "@chakra-ui/react";
@@ -24,7 +23,7 @@ import spkTbf from "../assets/images/sponsors/sparkasse_tauberfranken.jpg";
 import kuhn from "../assets/images/sponsors/tauberenergie_kuhn.png";
 import wittenstein from '../assets/images/sponsors/wittenstein.jpg'
 import band from "../assets/images/2023_weinberg.jpg";
-// import jahreskonzert from "../assets/images/jahreskonzert-2025.png";
+import promenadenkonzert from "../assets/images/promenadenkonzert-2026.jpeg";
 import { Global, PageHeader, Sponsor } from "../components";
 import { NextPageExtended } from "../utils";
 
@@ -131,6 +130,9 @@ const Page: NextPageExtended = () => {
 						</Text>
 					</Box>
 				</Stack>
+				<Center mt={10}>
+				<Image src={promenadenkonzert} alt="Jahreskonzert 2025"></Image>
+				</Center>
 				<Heading size="md" mt={20}>
 					Unsere Sponsoren
 				</Heading>
@@ -217,7 +219,6 @@ const Page: NextPageExtended = () => {
 						link="https://www.wittenstein.de"
 					></Sponsor>
 				</Flex>
-				{/* <Image src={jahreskonzert} alt="Jahreskonzert 2025"></Image> */}
 				{/* </Center> */}
 			</Box>
 		</Global >
