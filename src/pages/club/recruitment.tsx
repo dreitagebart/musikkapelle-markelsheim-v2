@@ -33,15 +33,16 @@ const Page: NextPageExtended = () => {
 					Jugendorchester auf, um das gemeinsame Spielen zu fördern und die
 					Freude an der Musik zu verstärken.
 				</Block>
-				<Heading>Klarinettenunterricht ab September 2025!</Heading>
+				<Heading>Querflötenunterricht ab September 2026!</Heading>
 				<Block>
-					Ab September 2025 gibt es zusätzlich die Möglichkeit, den
-					Klarinettenunterricht direkt in Markelsheim wahrzunehmen, wenn
-					genügend Kinder Interesse haben. Bist du dabei?
+					Der Klarinettenunterricht findet bereits jeden Freitag in Markelsheim in unserem Proberaum im Haus der Vereine statt. Für tiefes und hohes Blech (z. B. Trompete, Flügelhorn, Posaune, Euphonium, Tenorhorn u. v. m.) erfolgt der Unterricht jeden Donnerstag.
+				</Block>
+				<Block>
+					Ab September 2026 gibt es zusätzlich die Möglichkeit, den Querflötenunterricht direkt in Markelsheim wahrzunehmen, wenn genügend Kinder Interesse haben. Bist du dabei?
 				</Block>
 				<Block>
 					Solltest du Interesse an einer Ausbildung haben, so wende dich bitte
-					an unseren Vereinsvorstand <Link href="/contact">Verena Hüttl</Link>.
+					an <Link href="mailto:info@musikkapelle-markelsheim.de">info@musikkapelle-markelsheim.de</Link>.
 				</Block>
 				{/* Die Ausbildung der Instrumente erfolgt über
 					die Jugendmusikschule Bad Mergentheim.
